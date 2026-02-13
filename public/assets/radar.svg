@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <radialGradient id="pulse" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.28"/>
+      <stop offset="0.55" stop-color="#a78bfa" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.95"/>
+      <stop offset="0.5" stop-color="#a78bfa" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#34d399" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="256" cy="256" r="210" fill="url(#pulse)"/>
+  <circle cx="256" cy="256" r="210" stroke="url(#ring)" stroke-opacity="0.32" stroke-width="2"/>
+  <circle cx="256" cy="256" r="150" stroke="url(#ring)" stroke-opacity="0.22" stroke-width="2"/>
+  <circle cx="256" cy="256" r="90"  stroke="url(#ring)" stroke-opacity="0.20" stroke-width="2"/>
+
+  <path d="M46 256H466" stroke="url(#ring)" stroke-opacity="0.16" stroke-width="2"/>
+  <path d="M256 46V466" stroke="url(#ring)" stroke-opacity="0.16" stroke-width="2"/>
+
+  <!-- sweep wedge -->
+  <path d="M256 256L256 56A200 200 0 0 1 415 119Z" fill="#22d3ee" fill-opacity="0.10"/>
+  <path d="M256 256L415 119" stroke="#22d3ee" stroke-opacity="0.42" stroke-width="2"/>
+
+  <!-- blips -->
+  <circle cx="328" cy="198" r="4" fill="#34d399" fill-opacity="0.85"/>
+  <circle cx="198" cy="312" r="3" fill="#a78bfa" fill-opacity="0.85"/>
+  <circle cx="286" cy="330" r="2.5" fill="#22d3ee" fill-opacity="0.85"/>
+</svg>

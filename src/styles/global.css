@@ -1,24 +1,30 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --color-bg: 15 23 42;
-    --color-fg: 241 245 249;
-    --color-accent: 124 58 237;
-  }
+:root {
+  color-scheme: dark;
+}
 
+@layer base {
   body {
-    @apply bg-slate-900 text-slate-100;
+    @apply bg-[#050814] text-zinc-100 antialiased;
   }
 
   * {
-    @apply selection:bg-violet-600/30 selection:text-white;
+    @apply selection:bg-cyan-400/25 selection:text-white;
   }
 }
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-violet-400 to-purple-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-300 via-violet-300 to-emerald-300 bg-clip-text text-transparent;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-white/10 bg-white/5 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_20px_60px_-35px_rgba(34,211,238,0.20)];
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#050814];
   }
 }
 
@@ -28,27 +34,27 @@
   }
 
   .prose a {
-    @apply text-violet-400 transition-colors hover:text-violet-300 underline decoration-violet-500/50 underline-offset-2;
+    @apply text-cyan-300 underline decoration-cyan-300/40 underline-offset-4 transition-colors hover:text-cyan-200;
   }
 
   .prose h1 {
-    @apply mb-6 text-4xl font-bold text-slate-100 sm:text-5xl;
+    @apply mb-6 text-4xl font-bold text-zinc-100 sm:text-5xl;
   }
 
   .prose h2 {
-    @apply mb-4 mt-8 text-3xl font-bold text-violet-400;
+    @apply mb-4 mt-10 text-3xl font-bold text-violet-200;
   }
 
   .prose h3 {
-    @apply mb-3 mt-6 text-2xl font-semibold text-violet-300;
+    @apply mb-3 mt-8 text-2xl font-semibold text-zinc-100;
   }
 
   .prose p {
-    @apply mb-4 leading-relaxed text-slate-300;
+    @apply mb-4 leading-relaxed text-zinc-200/85;
   }
 
   .prose ul {
-    @apply space-y-2 text-slate-300;
+    @apply space-y-2 text-zinc-200/85;
   }
 
   .prose li {
@@ -56,6 +62,31 @@
   }
 
   .prose strong {
-    @apply font-semibold text-slate-200;
+    @apply font-semibold text-zinc-100;
+  }
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+}
+
+a {
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.95);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

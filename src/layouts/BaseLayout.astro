@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title?: string;
   description?: string;
@@ -6,7 +8,7 @@ interface Props {
 
 const {
   title = "Sara's OSINT Resources",
-  description = "Curated OSINT tools, techniques, and resources for open source intelligence gathering",
+  description = 'Curated OSINT tools, techniques, and resources for open source intelligence gathering',
 } = Astro.props;
 
 const navItems = [
@@ -20,34 +22,88 @@ const navItems = [
   { href: '/sara.osint/osint-challenges', label: 'Challenges' },
   { href: '/sara.osint/mental-health', label: 'Mental Health' },
 ];
+
+const pathname = Astro.url.pathname;
+
+const canonical = (() => {
+  try {
+    return new URL(pathname, Astro.site).toString();
+  } catch {
+    return undefined;
+  }
+})();
+
+const isActive = (href: string) => {
+  if (href === '/sara.osint/') return pathname === '/sara.osint/' || pathname === '/sara.osint/index.html';
+  return pathname.startsWith(href);
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+
+    {canonical ? <link rel="canonical" href={canonical} /> : null}
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {canonical ? <meta property="og:url" content={canonical} /> : null}
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#050814" />
+
     <link rel="icon" type="image/svg+xml" href="/sara.osint/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen bg-slate-900 text-slate-100">
+
+  <body class="min-h-full">
+    <a
+      href="#content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:rounded-lg focus:bg-black/80 focus:px-4 focus:py-2 focus:text-sm focus:text-zinc-100 focus:ring-2 focus:ring-cyan-300"
+    >
+      Skip to content
+    </a>
+
+    <!-- Background layers (non-interactive) -->
+    <div aria-hidden="true" class="fixed inset-0 pointer-events-none">
+      <div class="absolute -top-40 left-1/2 h-[46rem] w-[46rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-cyan-500/20 via-violet-500/12 to-emerald-400/10 blur-3xl" />
+      <div class="absolute inset-0 opacity-[0.12]" style="background-image: url('/sara.osint/assets/grid.svg'); background-size: 72px 72px;" />
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.35)_55%,rgba(0,0,0,0.78)_100%)]" />
+      <div class="absolute inset-0 opacity-[0.05]" style="background-image: url('/sara.osint/assets/noise.svg'); background-size: 220px 220px;" />
+    </div>
+
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 border-b border-slate-700 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/80">
+    <nav class="sticky top-0 z-50 border-b border-white/10 bg-[#050814]/80 backdrop-blur supports-[backdrop-filter]:bg-[#050814]/65">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
-          <div class="flex items-center">
-            <a href="/sara.osint/" class="gradient-text text-xl font-bold">
-              sara.osint
+        <div class="flex h-16 items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <a href="/sara.osint/" class="focus-ring inline-flex items-center gap-2 rounded-lg px-2 py-1">
+              <img src="/sara.osint/assets/radar.svg" width="22" height="22" alt="" aria-hidden="true" class="opacity-90" />
+              <span class="gradient-text text-lg font-bold">sara.osint</span>
             </a>
           </div>
+
+          <!-- Desktop nav -->
           <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-4">
+            <div class="ml-6 flex items-baseline gap-1">
               {navItems.map((item) => (
                 <a
                   href={item.href}
-                  class="rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800 hover:text-white"
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                  class:list={[
+                    'focus-ring rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                    isActive(item.href)
+                      ? 'bg-white/10 text-zinc-50'
+                      : 'text-zinc-300 hover:bg-white/5 hover:text-white',
+                  ]}
                 >
                   {item.label}
                 </a>
@@ -55,24 +111,49 @@ const navItems = [
             </div>
           </div>
         </div>
+
+        <!-- Mobile nav (scrollable) -->
+        <div class="md:hidden pb-3">
+          <div class="-mx-1 flex gap-2 overflow-x-auto px-1 [scrollbar-width:none] [-ms-overflow-style:none]" style="-webkit-overflow-scrolling: touch;">
+            <style is:global>
+              nav [style*="-webkit-overflow-scrolling"]::-webkit-scrollbar { display: none; }
+            </style>
+            {navItems.map((item) => (
+              <a
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                class:list={[
+                  'focus-ring shrink-0 rounded-full px-3 py-2 text-xs font-semibold transition-colors border',
+                  isActive(item.href)
+                    ? 'bg-white/12 text-zinc-50 border-white/15'
+                    : 'bg-white/5 text-zinc-200 border-white/10 hover:bg-white/8',
+                ]}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
     </nav>
 
     <!-- Main content -->
-    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <main id="content" class="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
       <slot />
     </main>
 
     <!-- Footer -->
-    <footer class="mt-16 border-t border-slate-800 py-8">
-      <div class="mx-auto max-w-7xl px-4 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
+    <footer class="relative mt-16 border-t border-white/10 py-10">
+      <div class="mx-auto max-w-7xl px-4 text-center text-sm text-zinc-400 sm:px-6 lg:px-8">
         <p class="mb-2">
-          Built with <a href="https://astro.build" class="text-violet-400 hover:text-violet-300" target="_blank" rel="noopener noreferrer">Astro</a> & 
-          <a href="https://tailwindcss.com" class="text-violet-400 hover:text-violet-300" target="_blank" rel="noopener noreferrer">Tailwind CSS</a>
+          Built with <a href="https://astro.build" class="focus-ring rounded-sm text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">Astro</a>
+          &
+          <a href="https://tailwindcss.com" class="focus-ring rounded-sm text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">Tailwind CSS</a>
         </p>
         <p>
-          <a href="/sara.osint/blog" class="text-violet-400 hover:text-violet-300">Blog</a> • 
-          <a href="https://sara-osint.blogspot.com/" class="text-violet-400 hover:text-violet-300" target="_blank" rel="noopener noreferrer">External Blog</a>
+          <a href="/sara.osint/blog" class="focus-ring rounded-sm text-cyan-300 hover:text-cyan-200">Blog</a>
+          <span aria-hidden="true"> • </span>
+          <a href="https://sara-osint.blogspot.com/" class="focus-ring rounded-sm text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">External Blog</a>
         </p>
       </div>
     </footer>
