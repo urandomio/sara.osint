@@ -33,6 +33,8 @@ function textOf(el) {
 function rewriteHref(href) {
   if (!href) return href;
 
+  if (href.startsWith('/sara.osint')) return href; // already local
+
   if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) return href;
 
   // Rewrite absolute links back to osint.al into local paths
@@ -56,7 +58,10 @@ function rewriteHref(href) {
 
   // google sites mirror style
   if (p.endsWith('.html')) p = p.slice(0, -5);
-  if (p === 'Welcome' || p === 'Welcome/') p = '';
+
+  // Normalize Welcome -> home (handles /Welcome, Welcome/, etc)
+  if (/^\/?welcome\/?$/i.test(p)) p = '';
+
   if (!p.startsWith('/')) p = '/' + p;
 
   // normalize double slashes
@@ -71,6 +76,15 @@ function sanitizeArticleHtml(html, { baseUrl }) {
 
   // remove noisy/unsafe tags
   document.querySelectorAll('script, style, iframe, form, button, input, textarea, select, noscript').forEach((n) => n.remove());
+
+  // Remove redundant Google Sites chrome (we already provide a global nav)
+  document.querySelectorAll('nav, header, footer').forEach((n) => n.remove());
+
+  // Remove common Google Sites boilerplate
+  const boilerplate = new Set(['page updated', 'google sites', 'report abuse']);
+  document.querySelectorAll('p').forEach((p) => {
+    if (boilerplate.has(textOf(p).toLowerCase())) p.remove();
+  });
 
   // unwrap spans (google sites uses spans for everything)
   document.querySelectorAll('span').forEach((span) => {
@@ -87,6 +101,14 @@ function sanitizeArticleHtml(html, { baseUrl }) {
     if (!parent) return;
     while (div.firstChild) parent.insertBefore(div.firstChild, div);
     parent.removeChild(div);
+  });
+
+  // Normalize headings like <h2><p>Title</p></h2>
+  document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((h) => {
+    const only = h.children.length === 1 ? h.firstElementChild : null;
+    if (only && only.tagName.toLowerCase() === 'p') {
+      h.textContent = textOf(h);
+    }
   });
 
   // Clean attributes on all elements
