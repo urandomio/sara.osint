@@ -32,9 +32,22 @@ function textOf(el) {
 
 function rewriteHref(href) {
   if (!href) return href;
-  // keep external links
-  if (/^https?:\/\//i.test(href)) return href;
+
   if (href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('#')) return href;
+
+  // Rewrite absolute links back to osint.al into local paths
+  if (/^https?:\/\//i.test(href)) {
+    try {
+      const u = new URL(href);
+      if (u.hostname === 'www.osint.al' || u.hostname === 'osint.al') {
+        href = u.pathname + (u.search || '') + (u.hash || '');
+      } else {
+        return href; // keep external
+      }
+    } catch {
+      return href;
+    }
+  }
 
   // strip query/hash
   const [noHash] = href.split('#');
@@ -96,11 +109,17 @@ function sanitizeArticleHtml(html, { baseUrl }) {
       if (href) {
         el.setAttribute('href', rewriteHref(href));
       }
-      // enforce safe external behavior
+
       const href2 = el.getAttribute('href') || '';
+
+      // enforce safe external behavior
       if (/^https?:\/\//i.test(href2)) {
         el.setAttribute('target', '_blank');
         el.setAttribute('rel', 'noopener noreferrer');
+      } else {
+        // internal links should not force new tabs
+        el.removeAttribute('target');
+        el.removeAttribute('rel');
       }
     }
 
