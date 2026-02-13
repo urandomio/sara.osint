@@ -139,6 +139,23 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+/*
+  Mobile Safari will often focus the first focusable element when a <dialog>
+  opens, which can create an "odd box" outline in the mobile menu.
+  Suppress focus-visible outlines on coarse pointers (touch) while keeping
+  keyboard focus styles on desktop.
+*/
+@media (hover: none) and (pointer: coarse) {
+  a:focus-visible,
+  button:focus-visible {
+    outline: none;
+  }
+
+  .focus-ring:focus-visible {
+    box-shadow: none !important;
+  }
+}
+
 @keyframes radar-glow {
   0%, 100% {
     filter: drop-shadow(0 0 3px rgba(34, 211, 238, 0.4));
