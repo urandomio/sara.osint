@@ -2,34 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="OSINT Challenges - Sara's OSINT Resources">
-  <article class="surface p-6 sm:p-10 prose prose-invert prose-violet max-w-none">
-    <h1 class="gradient-text mb-8 text-5xl font-bold">OSINT Challenges</h1>
-
-    <div class="space-y-8">
-      <section class="surface p-8 backdrop-blur">
-        <h2 class="mb-4 text-3xl font-bold text-violet-200">LinkedIn OSINT CTF (Challenge)</h2>
-        <p class="text-lg text-zinc-200/85">
-          Check out the <a href="/sara.osint/linkedin-challenge" class="text-cyan-300 hover:text-cyan-200 underline">#garyosintchallenge HERE</a>
-        </p>
-      </section>
-
-      <section class="surface p-8 backdrop-blur">
-        <h2 class="mb-4 text-3xl font-bold text-violet-200">#garysosintchallenge #5</h2>
-        <p class="text-lg text-zinc-200/85">
-          View challenge details <a href="/sara.osint/garysosintchallenge-5" class="text-cyan-300 hover:text-cyan-200 underline">HERE</a>
-        </p>
-      </section>
-
-      <section class="surface p-8 backdrop-blur">
-        <h2 class="mb-4 text-3xl font-bold text-violet-200">CTF's</h2>
-        <p class="text-lg text-zinc-200/85">
-          Capture the Flag challenges to test your OSINT skills! GLHF!
-        </p>
-        <p class="mt-4 text-lg text-zinc-200/85">
-          <a href="/sara.osint/ctfs" class="text-cyan-300 hover:text-cyan-200 underline">View CTF Resources HERE</a>
-        </p>
-      </section>
-    </div>
+<BaseLayout title="CTF's - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <h1 class="gradient-text mb-8 text-5xl font-bold">CTF's</h1>
+    <div set:html={"<h3><p><a href=\"https://www.osint.al/osint-challenges/linkedin-garyosintchallenge.html\" target=\"_blank\" rel=\"noopener noreferrer\">LinkedIn</a> OSINT CTF (Challenge)</p></h3><h3><p><a href=\"https://www.osint.al/osint-challenges/linkedin-garyosintchallenge.html\" target=\"_blank\" rel=\"noopener noreferrer\">#garyosintchallenge HERE</a></p></h3><h3><p><a href=\"https://www.osint.al/osint-challenges/garysosintchallenge-5.html\" target=\"_blank\" rel=\"noopener noreferrer\">#garysosintchallenge #5</a> <a href=\"https://www.osint.al/osint-challenges/garysosintchallenge-5.html\" target=\"_blank\" rel=\"noopener noreferrer\">HERE</a></p></h3><br><p>Capture the Flag challenges&nbsp; to test your OSINT skills! GLHF!<a href=\"https://www.osint.al/osint-challenges/ctfs.html\" target=\"_blank\" rel=\"noopener noreferrer\"> HERE</a></p>"} />
   </article>
 </BaseLayout>

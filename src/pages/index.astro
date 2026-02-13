@@ -2,85 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout>
-  <article class="surface p-6 sm:p-10 prose prose-invert prose-violet max-w-none">
+<BaseLayout title="Welcome - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
     <h1 class="gradient-text mb-8 text-5xl font-bold">Welcome</h1>
-
-    <div class="space-y-6 text-lg leading-relaxed">
-      <p>
-        Greetings — My name is Sara.
-      </p>
-
-      <p>
-        I'm on a quest to launch my OSINT career.
-      </p>
-
-      <p>
-        This site is a work in progress — I will be adding material to it slowly but surely.
-        It will be to showcase what I've done and perhaps provide information for others looking to learn.
-      </p>
-
-      <p>
-        If you have any questions, comments, or suggestions, I can be reached
-        <a href="/sara.osint/contact" class="text-cyan-300 hover:text-cyan-200 underline">HERE</a>.
-      </p>
-
-      <p>
-        For more information and updates, see
-        <a href="/sara.osint/blog" class="text-cyan-300 hover:text-cyan-200 underline">my BLOG</a>.
-      </p>
-    </div>
-
-    <section class="mt-12">
-      <h2 class="mb-6 text-3xl font-bold text-violet-200">CTF Accomplishments</h2>
-
-      <div class="space-y-4 surface p-6 backdrop-blur">
-        <div>
-          <h3 class="text-xl font-semibold text-zinc-100">3rd Place</h3>
-        </div>
-
-        <div>
-          <h3 class="text-xl font-semibold text-zinc-100">4th Place</h3>
-          <p class="mt-2 text-zinc-200/85">
-            At <a href="https://defcon.org/" class="text-cyan-300 hover:text-cyan-200 underline" target="_blank" rel="noopener noreferrer">Defcon's</a> OSINT CTF
-            held by <a href="https://www.tracelabs.org/" class="text-cyan-300 hover:text-cyan-200 underline" target="_blank" rel="noopener noreferrer">Trace Labs</a> on
-            August of 2022 -- our (2 person team) placed 4th!<br />
-            WHOHOO WALMART GREETERS!
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="mt-12">
-      <h2 class="mb-6 text-3xl font-bold text-violet-200">Coursework/Trainings</h2>
-
-      <ul class="space-y-3 surface p-6 backdrop-blur">
-        <li class="text-zinc-200/85">Online Harassment: Strategies for Journalists' Defense, February 2021 | Knight Center for Journalism in the Americas, Online</li>
-        <li class="text-zinc-200/85">Strategy &amp; Tactics for OSINT CTF's, October 2020, Alethe Denis - Innocent Lives Foundation, Online</li>
-        <li class="text-zinc-200/85">Digital investigations for journalists: How to follow the digital trail of people and entities, November 2020 | Knight Center for Journalism in the America's, Online</li>
-        <li class="text-zinc-200/85">The Power of Digital Audio Storytelling: From Podcasts to Voice Assistants, November 2022 | Knight Center for Journalism in the America's, Online</li>
-        <li class="text-zinc-200/85">Masterclass on Online Research with Paul Myers (BBC Academy's Investigation Support Initiative), May 2020 | Global Network of Investigative Journalists (GIJN), Webinar Series: Investigating the Pandemic, Online</li>
-        <li class="text-zinc-200/85">Alternative &amp; Advanced Search Engine Intelligence (AASEI) | Joe Gray, May 2022 | Antisyphon Training</li>
-        <li class="text-zinc-200/85">Investigative Reporting in Platforms: How to Dig into Social Accounts, Images, Ads, and Messaging Apps., June 2023, Online</li>
-      </ul>
-    </section>
-
-    <section class="mt-12">
-      <h2 class="mb-6 text-3xl font-bold text-violet-200">Volunteering</h2>
-
-      <ul class="space-y-3 surface p-6 backdrop-blur">
-        <li class="text-zinc-200/85">CTI League | November 11, 2020 - August 20, 2021 | Threat Response/Insight | Remote/Online</li>
-        <li class="text-zinc-200/85">Night Owl Reconnaissance | August 4, 2023 - Present | OSINT Investigator</li>
-      </ul>
-    </section>
-
-    <section class="mt-12">
-      <div class="flex flex-wrap gap-4">
-        <a href="https://www.osint.industries/post/osint-for-good" class="focus-ring rounded-full border border-white/12 bg-white/6 px-4 py-2 font-semibold text-zinc-100 transition-colors hover:bg-white/10" target="_blank" rel="noopener noreferrer">#OSINT4GOOD</a>
-        <a href="https://www.secjuice.com/social-media-intelligence-socmint/" class="focus-ring rounded-full border border-white/12 bg-white/6 px-4 py-2 font-semibold text-zinc-100 transition-colors hover:bg-white/10" target="_blank" rel="noopener noreferrer">#SOCMINT</a>
-        <a href="https://www.rusi.org/publication/osinf-lifeblood-decision-making" class="focus-ring rounded-full border border-white/12 bg-white/6 px-4 py-2 font-semibold text-zinc-100 transition-colors hover:bg-white/10" target="_blank" rel="noopener noreferrer">#OSINF</a>
-        <a href="https://www.osint.industries/post/what-is-dark-web-intelligence-darkint-beginners-guide" class="focus-ring rounded-full border border-white/12 bg-white/6 px-4 py-2 font-semibold text-zinc-100 transition-colors hover:bg-white/10" target="_blank" rel="noopener noreferrer">#DARKINT</a>
-      </div>
-    </section>
+    <div set:html={"<p>Greetings-- My name is Sara. <br><br>I'm on a quest to launch my OSINT career.</p><p>&nbsp;<br><br>This site is a work in progress&nbsp; --&nbsp; I&nbsp; will be adding material&nbsp; to it&nbsp; slowly but surely. It will be to showcase what I've done and perhaps provide information for others looking to learn. <br><br>If you have any questions, comments, or suggestions, I can be reached&nbsp; <a href=\"https://www.osint.al/bloginfo/keeping-up-with-the-internet-and-osint-news/questions-comments-concerns.html\" target=\"_blank\" rel=\"noopener noreferrer\">HERE:<br></a>&nbsp;</p><ul><li><p>for more information and updates, see <a href=\"https://sara-osint.blogspot.com/\" target=\"_blank\" rel=\"noopener noreferrer\">myBLOG</a></p></li></ul><h2><p>CTF Accomplishments</p></h2><p><img src=\"https://lh3.googleusercontent.com/sitesv/APaQ0SR-U_mDSjliG8_3lEYSrScuIm7DTeLYjtYzrePXDYZ6hFC4_O9kXEQSqTmws7J8D-g26BkFS15_eNMsD8T7OvXSe_A6IUSVlJeN5SCUSUutawpu5ZNgHxTcezx2LVetMGwDN6VMCB5oXukFEi_UN180n61aEoWldj0Op2wbIkH_IvwsPygasiGmrYGkC3I8T-hULiVNhQ725QYkwOrjlCOd8WN8G3KNGtGb1uc=w1280\" alt=\"\"></p><p>3rd Place</p><p><img src=\"https://lh3.googleusercontent.com/sitesv/APaQ0SRk61AYpvj7Yk8ROgy9XHRVtl_EovB95WY6UMFVApA8LENAmieMrJGdaIDySIXgzWrMSTETqCcPGKSCEtZesg0zet3hUl22Lv_g5BI26gE9oZEQvGmINVknz-ON816e5tmiEz8cn_4rws0cK5Kl2NfJnVj7fqr96NzqHGRRH5qY7RMMkUHBb5IPXnmmo0mHmSmDX-ds4Pvu3gKM2TIrB87fCXoUo5gWXkNAk0s=w1280\" alt=\"\"></p><p>4th Place</p><p>At<a href=\"https://defcon.org/\" target=\"_blank\" rel=\"noopener noreferrer\"> Defcon's </a>&nbsp;OSINT CTF held by <a href=\"https://www.tracelabs.org/\" target=\"_blank\" rel=\"noopener noreferrer\">Trace Labs</a> on August of 2022 -- our (2 person team) placed 4th!</p><p>WHOHOO WALMART GREETERS!</p><h2><p>COURSEWORK/TRAININGS</p></h2><ul><li><p>Online Harassment: Strategies for Journalists’ Defense, February 2021<br>\tKnight Center for Journalism in the Americas, Online</p></li><li><p>Strategy &amp; Tactics for OSINT CTF’s, October 2020, Alethe Denis- Innocent Lives Foundation, Online</p></li><li><p>Digital investigations for journalists: How to follow the digital trail of people and entities, November 2020<br>\tKnight Center for Journalism in the America’s, Online</p></li><li><p>The Power of Digital Audio Storytelling: From Podcasts to Voice Assistants, November 2022<br>\tKnight Center for Journalism in the America’s, Online</p></li><li><p>Masterclass on Online Research with Paul Myers (BBC Academy’s Investigation Support Initiative), May 2020<br> \tGlobal Network of Investigative Journalists (GJIN), Webinar Series: Investigating the Pandemic, Online</p></li><li><p>Alternative &amp; Advanced Search Engine Intelligence (AASEI)&nbsp; | Joe Gray, May 2022 <br>\tAntisyphon Training</p></li><li><p>Investigative Reporting in Platforms: How to Dig into Social Accounts, Images, Ads, and Messaging Apps., June 2023,Online</p></li></ul><p>VOLUNTEERING</p><ul><li><p>CTI League, | November 11, 2020 - August 20, 2021 | Threat Response/Insight | Remote/Online&nbsp;</p></li><li><p>Night Owl Reconnaissance, | August 4, 2023 - Present | OSINT Investigator</p></li></ul><p><a href=\"https://www.osint.al/bloginfo/osint4good.html\" target=\"_blank\" rel=\"noopener noreferrer\">#</a>OSINT4GOOD<a href=\"https://www.secjuice.com/social-media-intelligence-socmint/\" target=\"_blank\" rel=\"noopener noreferrer\"> #</a>SOCMINT <a href=\"https://www.rusi.org/publication/osinf-lifeblood-decision-making\" target=\"_blank\" rel=\"noopener noreferrer\">#</a>OSINF <a href=\"https://www.osint.industries/post/what-is-dark-web-intelligence-darkint-beginners-guide\" target=\"_blank\" rel=\"noopener noreferrer\">#</a>DARKINT</p>"} />
   </article>
 </BaseLayout>
