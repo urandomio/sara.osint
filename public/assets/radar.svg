@@ -28,20 +28,54 @@
   <path d="M46 256H466" stroke="url(#ring)" stroke-opacity="0.40" stroke-width="2.5"/>
   <path d="M256 46V466" stroke="url(#ring)" stroke-opacity="0.40" stroke-width="2.5"/>
 
-  <!-- sweep wedge -->
-  <path d="M256 256L256 56A200 200 0 0 1 415 119Z" fill="url(#sweep)"/>
-  <path d="M256 256L415 119" stroke="#22d3ee" stroke-opacity="0.90" stroke-width="3"/>
-  <path d="M256 256L256 56" stroke="#22d3ee" stroke-opacity="0.50" stroke-width="2"/>
+  <!-- rotating sweep wedge -->
+  <g>
+    <path d="M256 256L256 56A200 200 0 0 1 415 119Z" fill="url(#sweep)"/>
+    <path d="M256 256L415 119" stroke="#22d3ee" stroke-opacity="0.90" stroke-width="3"/>
+    <path d="M256 256L256 56" stroke="#22d3ee" stroke-opacity="0.50" stroke-width="2"/>
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0 256 256"
+      to="360 256 256"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+  </g>
 
-  <!-- blips with glow -->
-  <circle cx="328" cy="198" r="10" fill="#34d399" fill-opacity="0.25"/>
-  <circle cx="328" cy="198" r="6" fill="#34d399"/>
-  <circle cx="198" cy="312" r="8" fill="#a78bfa" fill-opacity="0.25"/>
-  <circle cx="198" cy="312" r="5" fill="#a78bfa"/>
-  <circle cx="286" cy="330" r="7" fill="#22d3ee" fill-opacity="0.25"/>
-  <circle cx="286" cy="330" r="4" fill="#22d3ee"/>
+  <!-- blips with ping animation -->
+  <g>
+    <circle cx="328" cy="198" r="10" fill="#34d399" fill-opacity="0.25">
+      <animate attributeName="r" values="6;12;6" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="0.25;0.08;0.25" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="328" cy="198" r="6" fill="#34d399">
+      <animate attributeName="fill-opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g>
+    <circle cx="198" cy="312" r="8" fill="#a78bfa" fill-opacity="0.25">
+      <animate attributeName="r" values="5;10;5" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="0.25;0.08;0.25" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="198" cy="312" r="5" fill="#a78bfa">
+      <animate attributeName="fill-opacity" values="1;0.6;1" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  <g>
+    <circle cx="286" cy="330" r="7" fill="#22d3ee" fill-opacity="0.25">
+      <animate attributeName="r" values="4;9;4" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="0.25;0.08;0.25" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="286" cy="330" r="4" fill="#22d3ee">
+      <animate attributeName="fill-opacity" values="1;0.6;1" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
 
-  <!-- center dot with glow -->
-  <circle cx="256" cy="256" r="10" fill="#22d3ee" fill-opacity="0.30"/>
+  <!-- center dot with glow pulse -->
+  <circle cx="256" cy="256" r="10" fill="#22d3ee" fill-opacity="0.30">
+    <animate attributeName="r" values="8;14;8" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="fill-opacity" values="0.30;0.10;0.30" dur="2s" repeatCount="indefinite"/>
+  </circle>
   <circle cx="256" cy="256" r="5" fill="#22d3ee"/>
 </svg>

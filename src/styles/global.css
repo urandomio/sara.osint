@@ -139,6 +139,19 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+@keyframes radar-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(34, 211, 238, 0.4));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(34, 211, 238, 0.7)) drop-shadow(0 0 16px rgba(167, 139, 250, 0.3));
+  }
+}
+
+.radar-pulse {
+  animation: radar-glow 3s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
