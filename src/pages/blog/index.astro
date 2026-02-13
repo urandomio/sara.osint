@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import '../../styles/global.css';
+
+const posts = [
+  {
+    slug: 'reverse-searching-phone-numbers',
+    title: 'Reverse Searching Phone Numbers Tip #1',
+    date: 'June 2025',
+    excerpt: 'Tips and tools for reverse searching phone numbers across multiple platforms.',
+  },
+  {
+    slug: 'expose-github-email',
+    title: 'Expose GitHub E-mail Address',
+    date: 'June 2025',
+    excerpt: 'Step-by-step guide to finding email addresses through GitHub profiles.',
+  },
+  {
+    slug: 'intro-to-tor',
+    title: 'Introduction to Tor',
+    date: 'February 2025',
+    excerpt: 'Getting started with Tor for privacy and dark web investigation.',
+  },
+];
+---
+
+<BaseLayout title="Blog - Sara's OSINT Resources">
+  <article class="prose prose-invert prose-violet max-w-none">
+    <h1 class="gradient-text mb-8 text-5xl font-bold">Blog</h1>
+
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      {posts.map((post) => (
+        <a
+          href={`/sara.osint/blog/${post.slug}`}
+          class="group block rounded-lg border border-slate-700 bg-slate-800/50 p-6 transition-all hover:border-violet-500 hover:bg-slate-800"
+        >
+          <h2 class="mb-2 text-2xl font-bold text-violet-400 group-hover:text-violet-300">
+            {post.title}
+          </h2>
+          <p class="mb-4 text-sm text-slate-500">{post.date}</p>
+          <p class="text-slate-300">{post.excerpt}</p>
+        </a>
+      ))}
+    </div>
+  </article>
+</BaseLayout>
