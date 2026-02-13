@@ -4,20 +4,36 @@ import PageHeader from '../../components/PageHeader.astro';
 ---
 
 <BaseLayout title="OSINT Challenges - Sara's OSINT Resources">
-  <article class="surface p-6 sm:p-10 max-w-none">
+  <article class="surface max-w-none p-6 sm:p-10">
     <PageHeader
       title="OSINT Challenges"
       description="Capture the Flag challenges and writeups to test your OSINT skills."
     />
 
     <div class="mt-8 grid gap-6 sm:grid-cols-2">
-      <a href="/sara.osint/challenges/garys-challenge-5" class="group block surface-card p-6 transition-all hover:border-cyan-400/30 hover:bg-white/10">
-        <h2 class="mb-2 text-xl font-bold text-zinc-100 group-hover:text-cyan-200">#garysosintchallenge 5</h2>
-        <p class="text-zinc-300/80">A geolocation challenge — identifying a sushi restaurant from a photo using Google Lens and Foursquare.</p>
+      <a
+        href="/sara.osint/challenges/garys-challenge-5"
+        class="group surface-card block p-6 transition-all hover:border-cyan-400/30 hover:bg-white/10"
+      >
+        <h2 class="mb-2 text-xl font-bold text-zinc-100 group-hover:text-cyan-200">
+          #garysosintchallenge 5
+        </h2>
+        <p class="text-zinc-300/80">
+          A geolocation challenge — identifying a sushi restaurant from a photo using Google Lens
+          and Foursquare.
+        </p>
       </a>
-      <a href="/sara.osint/challenges/linkedin-challenge" class="group block surface-card p-6 transition-all hover:border-cyan-400/30 hover:bg-white/10">
-        <h2 class="mb-2 text-xl font-bold text-zinc-100 group-hover:text-cyan-200">LinkedIn OSINT Challenge</h2>
-        <p class="text-zinc-300/80">Reverse image searching a pier photo — identifying Blackpool Pier through visual analysis and stock photo sites.</p>
+      <a
+        href="/sara.osint/challenges/linkedin-challenge"
+        class="group surface-card block p-6 transition-all hover:border-cyan-400/30 hover:bg-white/10"
+      >
+        <h2 class="mb-2 text-xl font-bold text-zinc-100 group-hover:text-cyan-200">
+          LinkedIn OSINT Challenge
+        </h2>
+        <p class="text-zinc-300/80">
+          Reverse image searching a pier photo — identifying Blackpool Pier through visual analysis
+          and stock photo sites.
+        </p>
       </a>
     </div>
 

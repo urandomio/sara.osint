@@ -5,11 +5,13 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <BaseLayout title="#garysosintchallenge 5 - Sara's OSINT Resources">
-  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
-    <Breadcrumb items={[
-      { label: 'Challenges', href: '/sara.osint/challenges' },
-      { label: '#garysosintchallenge 5' },
-    ]} />
+  <article class="surface prose prose-invert max-w-none p-6 sm:p-10">
+    <Breadcrumb
+      items={[
+        { label: 'Challenges', href: '/sara.osint/challenges' },
+        { label: '#garysosintchallenge 5' },
+      ]}
+    />
 
     <PageHeader title="#garysosintchallenge 5" />
 
@@ -18,7 +20,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
         <h2 class="mb-4 text-2xl font-bold">Step 1: Save the Image</h2>
         <p>Save the image posted.</p>
         <img
-          src="https://lh3.googleusercontent.com/sitesv/APaQ0STsYdZqNZaulJ_c_qG9YiizD7yKjYwR84FtiFjcjjQ1U90DbjZ-VyIw-nqcBR2_cPGavOTNNGuBKZb76y3HoU1C8BdVcNoWd9VIzp6UUhQtYyOkLxqhI7kSoV3e_tfusDeBeh9yLuHvAJ28PG0p5lcSsnqSzPDNNqU1JBRFpifPhyeUTg8D-U3RVY50gceJmbpHTaSJ5SHhDcYzi17dpRe8qcwp-m8DJiit=w1280"
+          src="/sara.osint/images/challenges/garys-5-step1-original.webp"
           alt="Original challenge photo showing a sushi restaurant interior"
           loading="lazy"
           class="my-4 rounded-lg"
@@ -29,17 +31,21 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
         <h2 class="mb-4 text-2xl font-bold">Step 2: Google Lens Search</h2>
         <p>
           I originally began doing this challenge on my phone. I decided to zoom into the sushi sign
-          and search with <a href="https://lens.google.com/" target="_blank" rel="noopener noreferrer">Google Lens</a>
+          and search with <a
+            href="https://lens.google.com/"
+            target="_blank"
+            rel="noopener noreferrer">Google Lens</a
+          >
           as it was unique and distinct to the photo.
         </p>
         <img
-          src="https://lh3.googleusercontent.com/sitesv/APaQ0STeDKdreXOcU3N5EtHF_oln5TIDhMCU_7VdhHhYSiNXn2QORuIec1PVQwXpWIUHYcdFd8WIIFVSHtOivxg9T2XKaaoautypaokgyh5gYtoF62WsplA9zOGNJtpFWjCPLvgGFYXvlO-tFgDshRuu36OuCbViaXluJKw5zI8zo3cuN0d0WZ6AGBRL3i-2WHuxhoURHhKFJUKMxIz5v-P5CqFex2Ut5UpTNkJpCMk=w1280"
+          src="/sara.osint/images/challenges/garys-5-step2-lens-zoom.webp"
           alt="Google Lens search zoomed into the sushi sign"
           loading="lazy"
           class="my-4 rounded-lg"
         />
         <img
-          src="https://lh3.googleusercontent.com/sitesv/APaQ0SS6fEutMFKcsbilfYOTeJEOpO-ve757ZMkH8Rrj2qMh3-97WaN0KEfesdNuTeVgT0ZHJ6RUOZKW2sHrxWgIJ_UoRuiJBRy8gxO80cs7FRv8KsEXzDXT9e01611p_koT5qveISwWswF-zY3S1spGGU2aGegABbA0QcwXHFluJlRdqbR3AVthfg6ANcPZDL_s22xGuhAOPfHapmsderXHw5okGru3yy18_IVgscc=w1280"
+          src="/sara.osint/images/challenges/garys-5-step2-lens-results.webp"
           alt="Google Lens search results showing the cropped sushi sign"
           loading="lazy"
           class="my-4 rounded-lg"
@@ -54,7 +60,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
           <a href="https://foursquare.com/" target="_blank" rel="noopener noreferrer">Foursquare</a> URLs.
         </p>
         <img
-          src="https://lh3.googleusercontent.com/sitesv/APaQ0SQHIGMbBHDZGeYRDDUfaL90lZUP_bO1HKxX3UU8lrDv8arG1qbGlxZMLWeg81zy0eeJiO7utDw3PFNQ3ZUboi40ROlVeOUVPxxQjNnAe1TNWaMBwOda-ovHqx82P3GeCSMLZmklvchw3RBt2qjDgB0tPX1CZVnL9frYuKU84IASI7eJ1j_iPmAq4I1HreO6QSVcbOf6xXsVvoqfMkpDlWrnQPK3xwQbo-nQGUQ=w1280"
+          src="/sara.osint/images/challenges/garys-5-step3-foursquare-results.webp"
           alt="Search results showing Foursquare URLs for Meneer Temaki"
           loading="lazy"
           class="my-4 rounded-lg"
@@ -65,15 +71,21 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
         <h2 class="mb-4 text-2xl font-bold">Step 4: Identifying the Restaurant</h2>
         <p>Let's see what Meneer Temaki is.</p>
         <img
-          src="https://lh3.googleusercontent.com/sitesv/APaQ0ST06bvc6hfzf_D4QJlRM9U4KHO6MqcYa0_8w6m6v7HYF_p3hqgTf9QuVTQJwxpzMfZV4YrMofR5izRRLvhPI9pPgCabE63VW0lgcWAf-seydQYtxG3Pr_ZPNbaB4TZe1f6Kam93P-4zOQypJ1NL2SkGGtx_K5BeR6iLz7Jc7MWhHSGw2NwJH32x-SQCIA8VtBqtg5pjBVYfZjQ658CbK9-Dw6U2p8HitkF9=w1280"
+          src="/sara.osint/images/challenges/garys-5-step4-foursquare-page.webp"
           alt="Foursquare page for Meneer Temaki at Foodhallen Amsterdam"
           loading="lazy"
           class="my-4 rounded-lg"
         />
         <p>
-          <a href="https://www.tripadvisor.ru/Restaurant_Review-g188590-d7231902-Reviews-Foodhallen-Amsterdam_North_Holland_Province.html" target="_blank" rel="noopener noreferrer">Foodhallen (Bellamyplein 51), Amsterdam, North Holland</a>
+          <a
+            href="https://www.tripadvisor.ru/Restaurant_Review-g188590-d7231902-Reviews-Foodhallen-Amsterdam_North_Holland_Province.html"
+            target="_blank"
+            rel="noopener noreferrer">Foodhallen (Bellamyplein 51), Amsterdam, North Holland</a
+          >
           /
-          <a href="https://www.foodhallen.nl/" target="_blank" rel="noopener noreferrer">https://www.foodhallen.nl/</a>
+          <a href="https://www.foodhallen.nl/" target="_blank" rel="noopener noreferrer"
+            >https://www.foodhallen.nl/</a
+          >
         </p>
       </section>
 
@@ -81,9 +93,15 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
         <h2 class="mb-4 text-2xl font-bold">Step 5: Confirmation via Instagram</h2>
         <p>
           I performed a Google search on
-          <a href="https://www.google.com/search?q=meneer+temaki" target="_blank" rel="noopener noreferrer">"Meneer Temaki"</a>
+          <a
+            href="https://www.google.com/search?q=meneer+temaki"
+            target="_blank"
+            rel="noopener noreferrer">"Meneer Temaki"</a
+          >
           leading me to the
-          <a href="https://www.instagram.com/meneertemaki" target="_blank" rel="noopener noreferrer">Meneer Temaki Instagram Page</a>
+          <a href="https://www.instagram.com/meneertemaki" target="_blank" rel="noopener noreferrer"
+            >Meneer Temaki Instagram Page</a
+          >
           where I recognized the SUSHI sign behind a wonderful employee!
         </p>
       </section>
