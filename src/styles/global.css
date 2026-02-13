@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-bg: 15 23 42;
+    --color-fg: 241 245 249;
+    --color-accent: 124 58 237;
+  }
+
+  body {
+    @apply bg-slate-900 text-slate-100;
+  }
+
+  * {
+    @apply selection:bg-violet-600/30 selection:text-white;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-violet-400 to-purple-600 bg-clip-text text-transparent;
+  }
+}

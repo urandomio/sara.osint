@@ -1,0 +1,53 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import '../styles/global.css';
+---
+
+<BaseLayout>
+  <main class="min-h-screen px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-4xl">
+      <!-- Header -->
+      <header class="mb-16 text-center">
+        <h1 class="gradient-text mb-4 text-5xl font-bold sm:text-6xl">
+          Sara's OSINT Resources
+        </h1>
+        <p class="text-xl text-slate-400">
+          Curated tools, techniques, and resources for open source intelligence
+          gathering
+        </p>
+      </header>
+
+      <!-- Content placeholder -->
+      <section class="space-y-8">
+        <div
+          class="rounded-lg border border-slate-700 bg-slate-800/50 p-8 backdrop-blur"
+        >
+          <h2 class="mb-4 text-2xl font-semibold text-violet-400">
+            Coming Soon
+          </h2>
+          <p class="leading-relaxed text-slate-300">
+            This site is currently being built. Check back soon for a
+            comprehensive collection of OSINT resources.
+          </p>
+        </div>
+
+        <!-- Footer -->
+        <footer class="pt-8 text-center text-sm text-slate-500">
+          <p>
+            Built with <a
+              href="https://astro.build"
+              class="text-violet-400 hover:text-violet-300"
+              target="_blank"
+              rel="noopener noreferrer">Astro</a
+            > & <a
+              href="https://tailwindcss.com"
+              class="text-violet-400 hover:text-violet-300"
+              target="_blank"
+              rel="noopener noreferrer">Tailwind CSS</a
+            >
+          </p>
+        </footer>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
