@@ -4,50 +4,84 @@ import '../styles/global.css';
 ---
 
 <BaseLayout>
-  <main class="min-h-screen px-4 py-16 sm:px-6 lg:px-8">
-    <div class="mx-auto max-w-4xl">
-      <!-- Header -->
-      <header class="mb-16 text-center">
-        <h1 class="gradient-text mb-4 text-5xl font-bold sm:text-6xl">
-          Sara's OSINT Resources
-        </h1>
-        <p class="text-xl text-slate-400">
-          Curated tools, techniques, and resources for open source intelligence
-          gathering
-        </p>
-      </header>
+  <article class="prose prose-invert prose-violet max-w-none">
+    <h1 class="gradient-text mb-8 text-5xl font-bold">Welcome</h1>
 
-      <!-- Content placeholder -->
-      <section class="space-y-8">
-        <div
-          class="rounded-lg border border-slate-700 bg-slate-800/50 p-8 backdrop-blur"
-        >
-          <h2 class="mb-4 text-2xl font-semibold text-violet-400">
-            Coming Soon
-          </h2>
-          <p class="leading-relaxed text-slate-300">
-            This site is currently being built. Check back soon for a
-            comprehensive collection of OSINT resources.
-          </p>
+    <div class="space-y-6 text-lg leading-relaxed">
+      <p>
+        Greetings-- My name is Sara.
+      </p>
+
+      <p>
+        I'm on a quest to launch my OSINT career.
+      </p>
+
+      <p>
+        This site is a work in progress -- I will be adding material to it slowly but surely. 
+        It will be to showcase what I've done and perhaps provide information for others looking to learn.
+      </p>
+
+      <p>
+        If you have any questions, comments, or suggestions, I can be reached 
+        <a href="/sara.osint/contact" class="text-violet-400 hover:text-violet-300 underline">HERE</a>.
+      </p>
+
+      <p>
+        For more information and updates, see 
+        <a href="https://sara-osint.blogspot.com/" class="text-violet-400 hover:text-violet-300 underline" target="_blank" rel="noopener noreferrer">my BLOG</a>.
+      </p>
+    </div>
+
+    <section class="mt-12">
+      <h2 class="mb-6 text-3xl font-bold text-violet-400">CTF Accomplishments</h2>
+      
+      <div class="space-y-4 rounded-lg border border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
+        <div>
+          <h3 class="text-xl font-semibold text-violet-300">3rd Place</h3>
         </div>
 
-        <!-- Footer -->
-        <footer class="pt-8 text-center text-sm text-slate-500">
-          <p>
-            Built with <a
-              href="https://astro.build"
-              class="text-violet-400 hover:text-violet-300"
-              target="_blank"
-              rel="noopener noreferrer">Astro</a
-            > & <a
-              href="https://tailwindcss.com"
-              class="text-violet-400 hover:text-violet-300"
-              target="_blank"
-              rel="noopener noreferrer">Tailwind CSS</a
-            >
+        <div>
+          <h3 class="text-xl font-semibold text-violet-300">4th Place</h3>
+          <p class="mt-2 text-slate-300">
+            At <a href="https://defcon.org/" class="text-violet-400 hover:text-violet-300 underline" target="_blank" rel="noopener noreferrer">Defcon's</a> OSINT CTF 
+            held by <a href="https://www.tracelabs.org/" class="text-violet-400 hover:text-violet-300 underline" target="_blank" rel="noopener noreferrer">Trace Labs</a> on 
+            August of 2022 -- our (2 person team) placed 4th!<br />
+            WHOHOO WALMART GREETERS!
           </p>
-        </footer>
-      </section>
-    </div>
-  </main>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="mb-6 text-3xl font-bold text-violet-400">Coursework/Trainings</h2>
+      
+      <ul class="space-y-3 rounded-lg border border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
+        <li class="text-slate-300">Online Harassment: Strategies for Journalists' Defense, February 2021 | Knight Center for Journalism in the Americas, Online</li>
+        <li class="text-slate-300">Strategy & Tactics for OSINT CTF's, October 2020, Alethe Denis - Innocent Lives Foundation, Online</li>
+        <li class="text-slate-300">Digital investigations for journalists: How to follow the digital trail of people and entities, November 2020 | Knight Center for Journalism in the America's, Online</li>
+        <li class="text-slate-300">The Power of Digital Audio Storytelling: From Podcasts to Voice Assistants, November 2022 | Knight Center for Journalism in the America's, Online</li>
+        <li class="text-slate-300">Masterclass on Online Research with Paul Myers (BBC Academy's Investigation Support Initiative), May 2020 | Global Network of Investigative Journalists (GIJN), Webinar Series: Investigating the Pandemic, Online</li>
+        <li class="text-slate-300">Alternative & Advanced Search Engine Intelligence (AASEI) | Joe Gray, May 2022 | Antisyphon Training</li>
+        <li class="text-slate-300">Investigative Reporting in Platforms: How to Dig into Social Accounts, Images, Ads, and Messaging Apps., June 2023, Online</li>
+      </ul>
+    </section>
+
+    <section class="mt-12">
+      <h2 class="mb-6 text-3xl font-bold text-violet-400">Volunteering</h2>
+      
+      <ul class="space-y-3 rounded-lg border border-slate-700 bg-slate-800/50 p-6 backdrop-blur">
+        <li class="text-slate-300">CTI League | November 11, 2020 - August 20, 2021 | Threat Response/Insight | Remote/Online</li>
+        <li class="text-slate-300">Night Owl Reconnaissance | August 4, 2023 - Present | OSINT Investigator</li>
+      </ul>
+    </section>
+
+    <section class="mt-12">
+      <div class="flex flex-wrap gap-4">
+        <a href="https://www.osint.industries/post/osint-for-good" class="rounded-lg bg-violet-600 px-4 py-2 font-semibold transition-colors hover:bg-violet-700" target="_blank" rel="noopener noreferrer">#OSINT4GOOD</a>
+        <a href="https://www.secjuice.com/social-media-intelligence-socmint/" class="rounded-lg bg-violet-600 px-4 py-2 font-semibold transition-colors hover:bg-violet-700" target="_blank" rel="noopener noreferrer">#SOCMINT</a>
+        <a href="https://www.rusi.org/publication/osinf-lifeblood-decision-making" class="rounded-lg bg-violet-600 px-4 py-2 font-semibold transition-colors hover:bg-violet-700" target="_blank" rel="noopener noreferrer">#OSINF</a>
+        <a href="https://www.osint.industries/post/what-is-dark-web-intelligence-darkint-beginners-guide" class="rounded-lg bg-violet-600 px-4 py-2 font-semibold transition-colors hover:bg-violet-700" target="_blank" rel="noopener noreferrer">#DARKINT</a>
+      </div>
+    </section>
+  </article>
 </BaseLayout>

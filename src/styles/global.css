@@ -21,3 +21,41 @@
     @apply bg-gradient-to-r from-violet-400 to-purple-600 bg-clip-text text-transparent;
   }
 }
+
+@layer components {
+  .prose {
+    @apply max-w-none;
+  }
+
+  .prose a {
+    @apply text-violet-400 transition-colors hover:text-violet-300 underline decoration-violet-500/50 underline-offset-2;
+  }
+
+  .prose h1 {
+    @apply mb-6 text-4xl font-bold text-slate-100 sm:text-5xl;
+  }
+
+  .prose h2 {
+    @apply mb-4 mt-8 text-3xl font-bold text-violet-400;
+  }
+
+  .prose h3 {
+    @apply mb-3 mt-6 text-2xl font-semibold text-violet-300;
+  }
+
+  .prose p {
+    @apply mb-4 leading-relaxed text-slate-300;
+  }
+
+  .prose ul {
+    @apply space-y-2 text-slate-300;
+  }
+
+  .prose li {
+    @apply leading-relaxed;
+  }
+
+  .prose strong {
+    @apply font-semibold text-slate-200;
+  }
+}

@@ -8,6 +8,17 @@ const {
   title = "Sara's OSINT Resources",
   description = "Curated OSINT tools, techniques, and resources for open source intelligence gathering",
 } = Astro.props;
+
+const navItems = [
+  { href: '/sara.osint/', label: 'Home' },
+  { href: '/sara.osint/web-based-tools', label: 'Web Tools' },
+  { href: '/sara.osint/osint-clearnet', label: 'OSINT Clearnet' },
+  { href: '/sara.osint/osint-darknet', label: 'OSINT Darknet' },
+  { href: '/sara.osint/investigative-journalism', label: 'Journalism' },
+  { href: '/sara.osint/osint-professionals', label: 'Professionals' },
+  { href: '/sara.osint/osint-challenges', label: 'Challenges' },
+  { href: '/sara.osint/mental-health', label: 'Mental Health' },
+];
 ---
 
 <!doctype html>
@@ -20,7 +31,48 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
-    <slot />
+  <body class="min-h-screen bg-slate-900 text-slate-100">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 border-b border-slate-700 bg-slate-900/95 backdrop-blur supports-[backdrop-filter]:bg-slate-900/80">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
+          <div class="flex items-center">
+            <a href="/sara.osint/" class="gradient-text text-xl font-bold">
+              sara.osint
+            </a>
+          </div>
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-4">
+              {navItems.map((item) => (
+                <a
+                  href={item.href}
+                  class="rounded-md px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800 hover:text-white"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 border-t border-slate-800 py-8">
+      <div class="mx-auto max-w-7xl px-4 text-center text-sm text-slate-500 sm:px-6 lg:px-8">
+        <p class="mb-2">
+          Built with <a href="https://astro.build" class="text-violet-400 hover:text-violet-300" target="_blank" rel="noopener noreferrer">Astro</a> & 
+          <a href="https://tailwindcss.com" class="text-violet-400 hover:text-violet-300" target="_blank" rel="noopener noreferrer">Tailwind CSS</a>
+        </p>
+        <p>
+          <a href="https://sara-osint.blogspot.com/" class="text-violet-400 hover:text-violet-300" target="_blank" rel="noopener noreferrer">Sara's Blog</a>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>
