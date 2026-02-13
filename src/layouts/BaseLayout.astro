@@ -33,12 +33,6 @@ const navItems = [
   { href: '/sara.osint/about', label: 'About' },
 ];
 
-const allLinks = [
-  ...navItems,
-  ...toolsItems,
-  ...resourcesItems,
-];
-
 const pathname = Astro.url.pathname;
 
 const canonical = (() => {
@@ -105,7 +99,7 @@ const isResourcesActive = resourcesItems.some((item) => isActive(item.href));
         <div class="flex h-16 items-center justify-between gap-4">
           <!-- Logo -->
           <a href="/sara.osint/" class="focus-ring inline-flex items-center gap-2.5 rounded-lg px-2 py-1">
-            <img src="/sara.osint/assets/radar.svg" width="40" height="40" alt="" aria-hidden="true" class="opacity-90" />
+            <img src="/sara.osint/assets/radar.svg" width="40" height="40" alt="" aria-hidden="true" />
             <span class="text-xl font-bold text-zinc-100">sara.osint</span>
           </a>
 
@@ -226,10 +220,10 @@ const isResourcesActive = resourcesItems.some((item) => isActive(item.href));
     </nav>
 
     <!-- Mobile menu (dialog overlay) -->
-    <dialog id="mobile-menu" class="fixed inset-0 z-[60] m-0 h-full w-full bg-[#050814]/98 p-0 text-zinc-100 backdrop:bg-transparent open:flex open:flex-col">
-      <div class="flex h-16 items-center justify-between px-4">
+    <dialog id="mobile-menu" class="fixed inset-0 z-[60] m-0 h-dvh max-h-dvh w-dvw max-w-dvw border-none bg-[#050814] p-0 text-zinc-100 backdrop:bg-black/50 open:flex open:flex-col">
+      <div class="flex h-16 shrink-0 items-center justify-between px-4">
         <a href="/sara.osint/" class="inline-flex items-center gap-2.5" onclick="document.getElementById('mobile-menu').close()">
-          <img src="/sara.osint/assets/radar.svg" width="40" height="40" alt="" aria-hidden="true" class="opacity-90" />
+          <img src="/sara.osint/assets/radar.svg" width="40" height="40" alt="" aria-hidden="true" />
           <span class="text-xl font-bold text-zinc-100">sara.osint</span>
         </a>
         <button
