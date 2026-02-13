@@ -1,0 +1,156 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+---
+
+<BaseLayout title="LinkedIn OSINT Challenge - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <Breadcrumb items={[
+      { label: 'Challenges', href: '/sara.osint/challenges' },
+      { label: 'LinkedIn OSINT Challenge' },
+    ]} />
+
+    <PageHeader title="LinkedIn OSINT Challenge" />
+
+    <div class="space-y-8 leading-relaxed">
+      <section>
+        <h2 class="mb-4 text-2xl font-bold">Step 1: Save the Original Image</h2>
+        <p>Save original image.</p>
+        <img
+          src="https://lh3.googleusercontent.com/sitesv/APaQ0SQeQYiscYqOqlFc1y6G3cUVMJ99jUWhCjAfAOvkKzT9Cdk3lW18PmdX6Vvb2GUy0NYgwyUIuYSYP4kGppQ_lXzS1MYzkCQija2HK4I7P6vtzorsZxBDP-1L-63Q9vlCdwZ56vutr6QeXMjBhSAVznIrlFiaY6S2ZSBdTd299ptUjDi9NsGCo8fmsaiKFL5DWDtl3rMPWPkNbvuRaqd25eXJoAexHwxDE_102oQ=w1280"
+          alt="Original challenge photo showing a pier at night with white railings and stairs"
+          loading="lazy"
+          class="my-4 rounded-lg"
+        />
+      </section>
+
+      <section>
+        <h2 class="mb-4 text-2xl font-bold">Step 2: Note Any Artifacts</h2>
+        <p>Note any artifacts in the image that could help identify the location.</p>
+      </section>
+
+      <section>
+        <h2 class="mb-4 text-2xl font-bold">Step 3: Reverse Image Search</h2>
+        <p>Reverse search with the search engine of your choice. I used Google.</p>
+        <p class="mt-2">Other options:</p>
+        <ul class="mt-2 list-disc space-y-1 pl-6">
+          <li><a href="https://yandex.com/images/" target="_blank" rel="noopener noreferrer">Yandex Images</a></li>
+          <li><a href="https://lens.google.com" target="_blank" rel="noopener noreferrer">Google Lens</a></li>
+          <li><a href="https://tineye.com/" target="_blank" rel="noopener noreferrer">TinEye</a></li>
+          <li><a href="https://www.bing.com/visualsearch" target="_blank" rel="noopener noreferrer">Bing Visual Search</a></li>
+        </ul>
+        <img
+          src="https://lh3.googleusercontent.com/sitesv/APaQ0SQ2VD6-45E5e6zHNdEY5RZuz0uwfaiB1v9xYzEZ8he9dm0vt-XywrZjDguCVbLACOAsfEECgAvFru8qdGcXAVufGrxFKCnvfvCGNInLtQSW8N6_TTqiEb2_Pn_ttaCW_RGrSXPmKpwr4KUq-jDVY7lkygTlrtTjAOaqXrEgtBBdbwXpVy4rkYVpImlqSDvaK7mIii2NR9x-gtLoEkTu-bhjDqAVUmXiuFlqawM=w1280"
+          alt="Google reverse image search results for the pier photo"
+          loading="lazy"
+          class="my-4 rounded-lg"
+        />
+      </section>
+
+      <section>
+        <h2 class="mb-4 text-2xl font-bold">Step 4: Cropping and Refining</h2>
+        <p>
+          I altered the image portion size attempting to highlight the stairs or a combination
+          of the lights and the distinct white railings. Cropping certain areas produces different results.
+        </p>
+        <img
+          src="https://lh3.googleusercontent.com/sitesv/APaQ0SQdTNL-UNeD4Ya8Wu6mPuNrClMdxfrcHYvhy4eB7PgHSEXr3qLmnVG8hSD_cyUMPGGP4yltfww2bxkXqS4OzdbqyXkvZalT-zMYvNxQmqFrnMQpqNOBkV2pU7sWPOeFJ7z77J7TeYlkDLJdi7FKBjaV164ZGgeTPrCoHWhTrLQ73dlUym9j9uMxlvTJWLW6owbKU1StIQ_un05iOIB6IGTy7TqvFBJxQQ=w1280"
+          alt="Cropped image highlighting stairs and white railings for refined search"
+          loading="lazy"
+          class="my-4 rounded-lg"
+        />
+      </section>
+
+      <section>
+        <h2 class="mb-4 text-2xl font-bold">Step 5: Identifying Key Artifacts</h2>
+        <p>Focusing on original or unique artifacts may help quicken the verification process in your search instead of the big picture.</p>
+        <p class="mt-2">These caught my eye:</p>
+        <ol class="mt-2 list-decimal space-y-1 pl-6">
+          <li>The stairs separating the dock/pier area</li>
+          <li>White railings</li>
+          <li>Unique lighting</li>
+        </ol>
+        <p class="mt-4">I tested out the "white railing and pier dock" observances within a search:</p>
+        <img
+          src="https://lh3.googleusercontent.com/sitesv/APaQ0STINJ4pKLeXcXwPx-H1ve0dSxZHK5-XhiMZWrcIlBe08mfeGTtOoV7E2dptmIeILp0YruuZCNgcnDXRgPOEEOqX9Pn1rqnQtaJhawt8qA8ev3bQlDWDDB8qxpht0Q5V9zG5QqwsCuSUNX2avTAL0EngwFWmYHRsirhupauTCRCFUrbC_klVG4kQTifQtg2to0Zh_9SH9WwfMzWe0Rx3fsWwPp7-mN7c4RuOtKo=w1280"
+          alt="Search results for white railings near piers and docks"
+          loading="lazy"
+          class="my-4 rounded-lg"
+        />
+      </section>
+
+      <section>
+        <h2 class="mb-4 text-2xl font-bold">Step 6: Scrolling Through Results</h2>
+        <p>
+          To my surprise I was overwhelmed with white railings near piers/docks or various combinations!
+          Let's speed scroll, not too fast, though! I mentally noted the appearance of both stairs
+          and railings in hopes of discovery.
+        </p>
+        <p class="mt-4 font-semibold">DO YOU SEE WHAT I SEE?</p>
+        <img
+          src="https://lh3.googleusercontent.com/sitesv/APaQ0SSGjJb6rxOZBJA0wFvvItYSrjyzc8ePvR8iMqRguE89scGaacC_wddL_MoGlOMWg-ET1JMEZfLb_dESjURbdGvlIw28qtsJ1DAPXaCrDyK7Xcp-u2OxIz03PlAu1ZPn9GvySE5Vq8XRAn3fqkIthbHsUmM7pD6sfugQLyxTlQHEv5izeG-byva1df4VrpB-8cxm8kSaIPlteUg7tP241xsFNV3nyFYrXrJAns4=w1280"
+          alt="Image search results showing a potential match among pier photos"
+          loading="lazy"
+          class="my-4 rounded-lg"
+        />
+        <p class="mt-4">Let's take a closer look!</p>
+        <img
+          src="https://lh3.googleusercontent.com/sitesv/APaQ0SQxWI7Fs4flRaS8O3aVBy-F-MckqW8PcSYe0WXteQGDFTTazj9vEb5jVHiAfchHndqNVpkdELUdOYeyDcefZHsWua4ofCJMVLeMJoEqUSc5TUsljhNzXBr1XD3rvjI93D605PVN6MWNh1wqgC9hxhFRCFcGLXvfp6qSg6G62nDF0U09h0J-Csnm9F-byvu_O-aBgcxva4EhQwNVlMlzOkgJZwHqMM-l4OqXvuw=w1280"
+          alt="Closer look at a matching pier photo showing similar railings and stairs"
+          loading="lazy"
+          class="my-4 rounded-lg"
+        />
+      </section>
+
+      <section>
+        <h2 class="mb-4 text-2xl font-bold">Step 7: Verifying the Location</h2>
+        <p>
+          The photo's description notes its location is: Cromer North Sea Norfolk East Anglia England UK.
+          I input the location into Google Maps to further compare the night photograph and maps views.
+        </p>
+        <p class="mt-4">
+          Nope, the railings are facing the water and not the road like in the original. Not quite it,
+          let's investigate further...
+        </p>
+      </section>
+
+      <section>
+        <h2 class="mb-4 text-2xl font-bold">Step 8: Stock Photo Sites to the Rescue</h2>
+        <p>
+          I found
+          <a href="https://www.alamy.com/stock-photo/pier-with-white-railings.html?sortBy=relevant" target="_blank" rel="noopener noreferrer">www.alamy.com</a>
+          and
+          <a href="https://www.istockphoto.com/search/2/image?family=creative&phrase=blackpooll" target="_blank" rel="noopener noreferrer">istockphoto.com</a>
+          very useful!
+        </p>
+        <p class="mt-2">I led the search with "pier with white railings".</p>
+        <p class="mt-4">
+          I FOUND THE SHAPE! Now, the photo is in black and white -- I wanted to see if the railings
+          were actually white -- seems so, let's continue!
+        </p>
+        <img
+          src="https://lh3.googleusercontent.com/sitesv/APaQ0STR6smdW-AGreQccCGXvo_2OsVI1QHjLdxv_WQj9TIwyqB2soAh7FH4-D4b5OtfAwzyyMgaDeoiRDbHT4Wx3b-MrqD1AVFiRqMQsUSU2LGtMAXRwEdI8o3wu9bhBG46MikXJhbiaLcaJcIJuPVl4hE123ft3rKKGqyzrocE_OF2Jv-zHkNI_WER8JnA9EhMJUmEko5cy0QiOZ-OwX6IKPcAmUJzjGOIhx2k=w1280"
+          alt="Alamy stock photo result showing matching pier shape with white railings - identified as Blackpool"
+          loading="lazy"
+          class="my-4 rounded-lg"
+        />
+      </section>
+
+      <section>
+        <h2 class="mb-4 text-2xl font-bold">Step 9: Blackpool Pier Confirmed</h2>
+        <p>
+          I took the location listed: BLACKPOOL PIER and put it through
+          <a href="https://maps.google.com/" target="_blank" rel="noopener noreferrer">Google Maps</a>.
+        </p>
+        <p class="mt-2 font-semibold">There are THREE piers in Blackpool!</p>
+        <img
+          src="https://lh3.googleusercontent.com/sitesv/APaQ0STyONRgcnCsSocnoQ_YaDVqpE66rTgQL4mu1T9czwFIw34Cg2R65hsfIt7eIDNV_DIDtfhnawXYG8gVk_tapTUKYhyEWVZvPkv8MH2y9Y2o8-led_6cMBEghLjGmJKHj52b08PVtNMJbP_MBhSMCLA_uzUCRluL_e93rghOqTNB8sd-_6LwdWYkXHQEpaDX805QmMwGj3LLXvyz7Lp2yA8AkglLdqdyJoDN=w1280"
+          alt="Google Maps showing three piers in Blackpool"
+          loading="lazy"
+          class="my-4 rounded-lg"
+        />
+      </section>
+    </div>
+  </article>
+</BaseLayout>

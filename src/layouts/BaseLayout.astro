@@ -11,17 +11,32 @@ const {
   description = 'Curated OSINT tools, techniques, and resources for open source intelligence gathering',
 } = Astro.props;
 
+const toolsItems = [
+  { href: '/sara.osint/tools/clearnet', label: 'Clearnet' },
+  { href: '/sara.osint/tools/darknet', label: 'Darknet' },
+  { href: '/sara.osint/tools/document-forensics', label: 'Document Forensics' },
+  { href: '/sara.osint/tools/search-engines', label: 'Search Engines' },
+  { href: '/sara.osint/tools/social-media', label: 'Social Media' },
+];
+
+const resourcesItems = [
+  { href: '/sara.osint/resources/journalism', label: 'Journalism' },
+  { href: '/sara.osint/resources/fact-checking', label: 'Fact-Checking' },
+  { href: '/sara.osint/resources/professionals', label: 'Professionals' },
+  { href: '/sara.osint/resources/mental-health', label: 'Mental Health' },
+];
+
 const navItems = [
   { href: '/sara.osint/', label: 'Home' },
-  { href: '/sara.osint/all-pages', label: 'Index' },
+  { href: '/sara.osint/challenges', label: 'Challenges' },
   { href: '/sara.osint/blog', label: 'Blog' },
-  { href: '/sara.osint/web-based-tools', label: 'Web Tools' },
-  { href: '/sara.osint/osint-clearnet', label: 'OSINT Clearnet' },
-  { href: '/sara.osint/osint-darknet', label: 'OSINT Darknet' },
-  { href: '/sara.osint/investigative-journalism', label: 'Journalism' },
-  { href: '/sara.osint/osint-professionals', label: 'Professionals' },
-  { href: '/sara.osint/osint-challenges', label: 'Challenges' },
-  { href: '/sara.osint/mental-health', label: 'Mental Health' },
+  { href: '/sara.osint/about', label: 'About' },
+];
+
+const allLinks = [
+  ...navItems,
+  ...toolsItems,
+  ...resourcesItems,
 ];
 
 const pathname = Astro.url.pathname;
@@ -38,6 +53,9 @@ const isActive = (href: string) => {
   if (href === '/sara.osint/') return pathname === '/sara.osint/' || pathname === '/sara.osint/index.html';
   return pathname.startsWith(href);
 };
+
+const isToolsActive = toolsItems.some((item) => isActive(item.href));
+const isResourcesActive = resourcesItems.some((item) => isActive(item.href));
 ---
 
 <!doctype html>
@@ -73,70 +91,194 @@ const isActive = (href: string) => {
       Skip to content
     </a>
 
-    <!-- Background layers (non-interactive) -->
+    <!-- Background layers -->
     <div aria-hidden="true" class="fixed inset-0 pointer-events-none">
-      <div class="absolute -top-40 left-1/2 h-[46rem] w-[46rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-cyan-500/20 via-violet-500/12 to-emerald-400/10 blur-3xl" />
-      <div class="absolute inset-0 opacity-[0.12]" style="background-image: url('/sara.osint/assets/grid.svg'); background-size: 72px 72px;" />
+      <div class="absolute -top-40 left-1/2 h-[46rem] w-[46rem] -translate-x-1/2 rounded-full bg-gradient-to-tr from-cyan-500/15 via-violet-500/8 to-emerald-400/8 blur-3xl" />
+      <div class="absolute inset-0 opacity-[0.08]" style="background-image: url('/sara.osint/assets/grid.svg'); background-size: 72px 72px;" />
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(0,0,0,0.35)_55%,rgba(0,0,0,0.78)_100%)]" />
-      <div class="absolute inset-0 opacity-[0.05]" style="background-image: url('/sara.osint/assets/noise.svg'); background-size: 220px 220px;" />
+      <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('/sara.osint/assets/noise.svg'); background-size: 220px 220px;" />
     </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 border-b border-white/10 bg-[#050814]/80 backdrop-blur supports-[backdrop-filter]:bg-[#050814]/65">
+    <nav class="sticky top-0 z-50 border-b border-white/10 bg-[#050814]/80 backdrop-blur-lg supports-[backdrop-filter]:bg-[#050814]/65">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between gap-4">
-          <div class="flex items-center gap-3">
-            <a href="/sara.osint/" class="focus-ring inline-flex items-center gap-2 rounded-lg px-2 py-1">
-              <img src="/sara.osint/assets/radar.svg" width="22" height="22" alt="" aria-hidden="true" class="opacity-90" />
-              <span class="gradient-text text-lg font-bold">sara.osint</span>
-            </a>
-          </div>
+          <!-- Logo -->
+          <a href="/sara.osint/" class="focus-ring inline-flex items-center gap-2.5 rounded-lg px-2 py-1">
+            <img src="/sara.osint/assets/radar.svg" width="40" height="40" alt="" aria-hidden="true" class="opacity-90" />
+            <span class="text-xl font-bold text-zinc-100">sara.osint</span>
+          </a>
 
           <!-- Desktop nav -->
-          <div class="hidden md:block">
-            <div class="ml-6 flex items-baseline gap-1">
-              {navItems.map((item) => (
-                <a
-                  href={item.href}
-                  aria-current={isActive(item.href) ? 'page' : undefined}
-                  class:list={[
-                    'focus-ring rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-                    isActive(item.href)
-                      ? 'bg-white/10 text-zinc-50'
-                      : 'text-zinc-300 hover:bg-white/5 hover:text-white',
-                  ]}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
+          <div class="hidden lg:flex items-center gap-1">
+            <a
+              href="/sara.osint/"
+              aria-current={isActive('/sara.osint/') ? 'page' : undefined}
+              class:list={[
+                'focus-ring rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                isActive('/sara.osint/')
+                  ? 'bg-white/10 text-zinc-50'
+                  : 'text-zinc-300 hover:bg-white/5 hover:text-white',
+              ]}
+            >
+              Home
+            </a>
 
-        <!-- Mobile nav (scrollable) -->
-        <div class="md:hidden pb-3">
-          <div class="-mx-1 flex gap-2 overflow-x-auto px-1 [scrollbar-width:none] [-ms-overflow-style:none]" style="-webkit-overflow-scrolling: touch;">
-            <style is:global>
-              nav [style*="-webkit-overflow-scrolling"]::-webkit-scrollbar { display: none; }
-            </style>
-            {navItems.map((item) => (
+            <!-- Tools dropdown -->
+            <div class="relative group">
+              <button
+                type="button"
+                class:list={[
+                  'focus-ring inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                  isToolsActive
+                    ? 'bg-white/10 text-zinc-50'
+                    : 'text-zinc-300 hover:bg-white/5 hover:text-white',
+                ]}
+              >
+                Tools
+                <svg class="h-4 w-4 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <div class="invisible absolute left-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div class="w-56 rounded-xl border border-white/10 bg-[#0a0f1e]/95 p-2 shadow-2xl backdrop-blur-xl">
+                  {toolsItems.map((item) => (
+                    <a
+                      href={item.href}
+                      class:list={[
+                        'block rounded-lg px-3 py-2 text-sm transition-colors',
+                        isActive(item.href)
+                          ? 'bg-white/10 text-zinc-50'
+                          : 'text-zinc-300 hover:bg-white/5 hover:text-white',
+                      ]}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <!-- Resources dropdown -->
+            <div class="relative group">
+              <button
+                type="button"
+                class:list={[
+                  'focus-ring inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors',
+                  isResourcesActive
+                    ? 'bg-white/10 text-zinc-50'
+                    : 'text-zinc-300 hover:bg-white/5 hover:text-white',
+                ]}
+              >
+                Resources
+                <svg class="h-4 w-4 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              <div class="invisible absolute left-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                <div class="w-56 rounded-xl border border-white/10 bg-[#0a0f1e]/95 p-2 shadow-2xl backdrop-blur-xl">
+                  {resourcesItems.map((item) => (
+                    <a
+                      href={item.href}
+                      class:list={[
+                        'block rounded-lg px-3 py-2 text-sm transition-colors',
+                        isActive(item.href)
+                          ? 'bg-white/10 text-zinc-50'
+                          : 'text-zinc-300 hover:bg-white/5 hover:text-white',
+                      ]}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {navItems.filter((item) => item.href !== '/sara.osint/').map((item) => (
               <a
                 href={item.href}
                 aria-current={isActive(item.href) ? 'page' : undefined}
                 class:list={[
-                  'focus-ring shrink-0 rounded-full px-3 py-2 text-xs font-semibold transition-colors border',
+                  'focus-ring rounded-lg px-3 py-2 text-sm font-medium transition-colors',
                   isActive(item.href)
-                    ? 'bg-white/12 text-zinc-50 border-white/15'
-                    : 'bg-white/5 text-zinc-200 border-white/10 hover:bg-white/8',
+                    ? 'bg-white/10 text-zinc-50'
+                    : 'text-zinc-300 hover:bg-white/5 hover:text-white',
                 ]}
               >
                 {item.label}
               </a>
             ))}
           </div>
+
+          <!-- Mobile menu button -->
+          <button
+            type="button"
+            class="focus-ring lg:hidden rounded-lg p-2 text-zinc-300 hover:bg-white/5 hover:text-white"
+            aria-label="Open menu"
+            onclick="document.getElementById('mobile-menu').showModal()"
+          >
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
+
+    <!-- Mobile menu (dialog overlay) -->
+    <dialog id="mobile-menu" class="fixed inset-0 z-[60] m-0 h-full w-full bg-[#050814]/98 p-0 text-zinc-100 backdrop:bg-transparent open:flex open:flex-col">
+      <div class="flex h-16 items-center justify-between px-4">
+        <a href="/sara.osint/" class="inline-flex items-center gap-2.5" onclick="document.getElementById('mobile-menu').close()">
+          <img src="/sara.osint/assets/radar.svg" width="40" height="40" alt="" aria-hidden="true" class="opacity-90" />
+          <span class="text-xl font-bold text-zinc-100">sara.osint</span>
+        </a>
+        <button
+          type="button"
+          class="rounded-lg p-2 text-zinc-300 hover:text-white"
+          aria-label="Close menu"
+          onclick="document.getElementById('mobile-menu').close()"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <nav class="flex-1 overflow-y-auto px-4 pb-8 pt-4">
+        <div class="space-y-1">
+          <a href="/sara.osint/" class="block rounded-lg px-4 py-3 text-lg font-medium text-zinc-100 hover:bg-white/5" onclick="document.getElementById('mobile-menu').close()">Home</a>
+        </div>
+
+        <div class="mt-6">
+          <p class="px-4 text-xs font-semibold uppercase tracking-wider text-zinc-500">Tools</p>
+          <div class="mt-2 space-y-1">
+            {toolsItems.map((item) => (
+              <a href={item.href} class="block rounded-lg px-4 py-2.5 text-zinc-300 hover:bg-white/5 hover:text-white" onclick="document.getElementById('mobile-menu').close()">
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-6">
+          <p class="px-4 text-xs font-semibold uppercase tracking-wider text-zinc-500">Resources</p>
+          <div class="mt-2 space-y-1">
+            {resourcesItems.map((item) => (
+              <a href={item.href} class="block rounded-lg px-4 py-2.5 text-zinc-300 hover:bg-white/5 hover:text-white" onclick="document.getElementById('mobile-menu').close()">
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div class="mt-6 space-y-1">
+          {navItems.filter((item) => item.href !== '/sara.osint/').map((item) => (
+            <a href={item.href} class="block rounded-lg px-4 py-3 text-lg font-medium text-zinc-100 hover:bg-white/5" onclick="document.getElementById('mobile-menu').close()">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+    </dialog>
 
     <!-- Main content -->
     <main id="content" class="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -144,18 +286,14 @@ const isActive = (href: string) => {
     </main>
 
     <!-- Footer -->
-    <footer class="relative mt-16 border-t border-white/10 py-10">
-      <div class="mx-auto max-w-7xl px-4 text-center text-sm text-zinc-400 sm:px-6 lg:px-8">
-        <p class="mb-2">
-          Built with <a href="https://astro.build" class="focus-ring rounded-sm text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">Astro</a>
-          &
-          <a href="https://tailwindcss.com" class="focus-ring rounded-sm text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">Tailwind CSS</a>
-        </p>
-        <p>
-          <a href="/sara.osint/blog" class="focus-ring rounded-sm text-cyan-300 hover:text-cyan-200">Blog</a>
-          <span aria-hidden="true"> • </span>
-          <a href="https://sara-osint.blogspot.com/" class="focus-ring rounded-sm text-cyan-300 hover:text-cyan-200" target="_blank" rel="noopener noreferrer">External Blog</a>
-        </p>
+    <footer class="relative mt-16 border-t border-white/5 py-8">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6 lg:px-8">
+        <p class="text-sm text-zinc-500">&copy; 2025 Sara's OSINT Resources</p>
+        <nav class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+          <a href="/sara.osint/about" class="text-zinc-400 transition-colors hover:text-zinc-200">About</a>
+          <a href="/sara.osint/blog" class="text-zinc-400 transition-colors hover:text-zinc-200">Blog</a>
+          <a href="https://sara-osint.blogspot.com/" class="text-zinc-400 transition-colors hover:text-zinc-200" target="_blank" rel="noopener noreferrer">External Blog</a>
+        </nav>
       </div>
     </footer>
   </body>

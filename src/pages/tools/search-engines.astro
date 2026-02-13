@@ -1,0 +1,136 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ToolSection from '../../components/ToolSection.astro';
+---
+
+<BaseLayout title="Search Engines - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <PageHeader
+      title="Search Engines"
+      description="Alternative search engines, archive search, AI search, academic search, and specialized OSINT search tools."
+    />
+
+    <ToolSection
+      title="General Search Engines"
+      columns={2}
+      items={[
+        { name: "Google", url: "https://google.com/" },
+        { name: "DuckDuckGo", url: "https://duckduckgo.com/" },
+        { name: "Bing", url: "https://www.bing.com/" },
+        { name: "Yahoo!", url: "https://yahoo.com/" },
+        { name: "Yandex", url: "https://yandex.com/" },
+        { name: "Swisscows", url: "https://swisscows.com/" },
+        { name: "Startpage", url: "https://www.startpage.com/" },
+        { name: "Gigablast", url: "https://www.gigablast.com/" },
+        { name: "UVRX", url: "http://www.uvrx.com/" },
+        { name: "Wikipedia", url: "https://www.wikipedia.org/" },
+        { name: "Ask", url: "https://www.ask.com/" },
+        { name: "Mojeek", url: "https://www.mojeek.com/" },
+        { name: "Lycos", url: "https://www.lycos.com/" },
+        { name: "Qwant", url: "https://www.qwant.com/" },
+        { name: "Brave Search", url: "https://search.brave.com/" },
+      ]}
+    />
+
+    <ToolSection
+      title="Archive Search"
+      columns={2}
+      items={[
+        { name: "Internet Archive", url: "https://archive.org/" },
+        { name: "Wayback Machine", url: "https://web.archive.org/" },
+        { name: "Archive.today", url: "https://archive.ph/" },
+        { name: "WebCite", url: "https://www.webcitation.org/" },
+        { name: "Google Cache", url: "https://webcache.googleusercontent.com/search?q=cache:%3CENTER%20URL%20HERE" },
+        { name: "Bing Cache", url: "https://www.bing.com/search?q=url:www.%3CENTER%20URL%20HERE" },
+        { name: "MementoWeb Time Travel", url: "https://timetravel.mementoweb.org/" },
+        { name: "End of Term Archive", url: "http://eotarchive.cdlib.org/" },
+        { name: "EU Web Archive", url: "https://op.europa.eu/en/web/web-tools/euwebarchive" },
+        { name: "iTools", url: "http://itools.com/" },
+        { name: "GhostArchive", url: "https://ghostarchive.org/" },
+        { name: "CachedView", url: "https://cachedview.nl/" },
+        { name: "OSINT Archiver", url: "https://osint.lolarchiver.com/", desc: "Retrieve digital footprint of email addresses" },
+      ]}
+    />
+
+    <ToolSection
+      title="AI Search"
+      items={[
+        { name: "lenso.ai", url: "https://lenso.ai/en", desc: "AI Reverse Image Search" },
+      ]}
+    />
+
+    <ToolSection
+      title="Medicine"
+      columns={2}
+      items={[
+        { name: "Allmedx.com", url: "https://allmedx.com/" },
+        { name: "DrugBank", url: "https://go.drugbank.com/" },
+        { name: "Drugs", url: "https://www.drugs.com/" },
+        { name: "FindZebra", url: "https://findzebra.com/" },
+        { name: "Googlemt.com", url: "https://www.googlemt.com/" },
+        { name: "Medicalndx.com", url: "https://medicalndx.com/" },
+        { name: "MedlinePlus", url: "https://medlineplus.gov/" },
+        { name: "Mednar.com", url: "https://mednar.com/" },
+        { name: "MedWorm", url: "https://medworm.com/", desc: "Medical Search Engine and RSS News" },
+        { name: "Mwsearch.com", url: "https://www.mwsearch.com/" },
+        { name: "PDR.Net", url: "https://pdr.net/" },
+        { name: "Seenso.com", url: "https://www.seenso.com/" },
+        { name: "ZocDoc", url: "https://www.zocdoc.com/" },
+      ]}
+    />
+
+    <ToolSection
+      title="Academic / Scholarly"
+      columns={2}
+      items={[
+        { name: "Google Scholar", url: "https://www.scholar.google.com/" },
+        { name: "Scinapse.io", url: "https://scinapse.io/" },
+        { name: "Msearch.io", url: "https://msearch.io/" },
+        { name: "ResearchGate", url: "https://www.researchgate.net/" },
+        { name: "DOAJ", url: "https://doaj.org/", desc: "Directory of Open Access Journals" },
+        { name: "Copyscape", url: "https://www.copyscape.com/" },
+        { name: "iSeek Education", url: "https://education.iseek.com/iseek/home.page" },
+        { name: "RefSeek", url: "https://www.refseek.com/" },
+        { name: "Microsoft Academic", url: "https://academic.microsoft.com/home" },
+        { name: "JSTOR", url: "https://www.jstor.org/" },
+        { name: "BASE", url: "https://www.base-search.net/" },
+        { name: "ERIC", url: "https://eric.ed.gov/" },
+        { name: "WolframAlpha", url: "https://www.wolframalpha.com/" },
+        { name: "LibGuides", url: "https://community.libguides.com/" },
+        { name: "Lumen Database", url: "https://lumendatabase.org/" },
+        { name: "Sci-hub.ru", url: "https://sci-hub.ru/" },
+        { name: "Core", url: "https://core.ac.uk/" },
+      ]}
+    />
+
+    <ToolSection
+      title="Repository Search (GIT)"
+      items={[
+        { name: "grep.app", url: "https://grep.app/", desc: "Git Repo Search" },
+        { name: "Public WWW", url: "https://publicwww.com/", desc: "Source Code Search" },
+      ]}
+    />
+
+    <ToolSection
+      title="Text"
+      items={[
+        { name: "Google Word Sniper", url: "https://googlewordsniper.eu/", desc: "Henk Van Ess" },
+      ]}
+    />
+
+    <ToolSection
+      title="MISC"
+      items={[
+        { name: "Google Search from different location", url: "http://isearchfrom.com/", desc: "isearchfrom.com" },
+      ]}
+    />
+
+    <ToolSection
+      title="Vulnerabilities"
+      items={[
+        { name: "National Vulnerabilities Database Search", url: "https://nvd.nist.gov/vuln/search" },
+      ]}
+    />
+  </article>
+</BaseLayout>

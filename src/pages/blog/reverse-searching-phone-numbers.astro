@@ -1,21 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import '../../styles/global.css';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <BaseLayout title="Reverse Searching Phone Numbers Tip #1 - Sara's OSINT Resources">
-  <article class="prose prose-invert prose-violet max-w-none">
-    <a href="/sara.osint/blog" class="mb-4 inline-block text-violet-400 hover:text-violet-300">← Back to Blog</a>
-    
-    <h1 class="gradient-text mb-4 text-5xl font-bold">Reverse Searching Phone Numbers Tip #1</h1>
-    <p class="mb-8 text-sm text-slate-500">June 2025</p>
+  <article class="prose prose-invert max-w-none">
+    <Breadcrumb items={[
+      { label: 'Blog', href: '/sara.osint/blog' },
+      { label: 'Reverse Searching Phone Numbers' },
+    ]} />
+
+    <h1>Reverse Searching Phone Numbers Tip #1</h1>
+    <p class="mb-8 text-sm text-zinc-500">June 2025</p>
 
     <div class="space-y-6 leading-relaxed">
       <section>
         <h2>Check if an account exists within a certain phone number:</h2>
-        <ul class="space-y-2">
-          <li><strong>Telegram:</strong> <a href="https://t.me/+123456789" target="_blank" rel="noopener noreferrer">https://t.me/+123456789</a> (Need Telegram installed - desktop)</li>
-          <li><strong>WhatsApp:</strong> <a href="http://wa.me/+123456789" target="_blank" rel="noopener noreferrer">http://wa.me/+123456789</a> (Need WhatsApp installed - desktop)</li>
+        <ul>
+          <li><strong>Telegram:</strong> <a href="https://t.me/+123456789" target="_blank" rel="noopener noreferrer">https://t.me/+123456789</a> (Need Telegram installed &mdash; desktop)</li>
+          <li><strong>WhatsApp:</strong> <a href="http://wa.me/+123456789" target="_blank" rel="noopener noreferrer">http://wa.me/+123456789</a> (Need WhatsApp installed &mdash; desktop)</li>
           <li><strong>Viber:</strong> <a href="http://viber.click/+123456789" target="_blank" rel="noopener noreferrer">http://viber.click/+123456789</a></li>
           <li><strong>Facebook:</strong> Search Accounts with Phone Number</li>
         </ul>
@@ -23,7 +26,7 @@ import '../../styles/global.css';
 
       <section>
         <h2>Search Tools:</h2>
-        <ul class="space-y-2">
+        <ul>
           <li><a href="https://cyberbackgroundchecks.com/" target="_blank" rel="noopener noreferrer">Cyber Background Checks</a></li>
           <li><a href="https://thatsthem.com/" target="_blank" rel="noopener noreferrer">ThatsThem</a></li>
         </ul>
@@ -31,14 +34,14 @@ import '../../styles/global.css';
 
       <section>
         <h2>OSINT Phone Numbers Framework:</h2>
-        <ul class="space-y-2">
+        <ul>
           <li><a href="https://hackcontrol.org/" target="_blank" rel="noopener noreferrer">HackControl PDF</a></li>
         </ul>
       </section>
 
       <section>
         <h2>Apps:</h2>
-        <ul class="space-y-2">
+        <ul>
           <li>GetContact</li>
           <li>TrueCaller</li>
           <li>EyeCon</li>
@@ -47,7 +50,7 @@ import '../../styles/global.css';
 
       <section>
         <h2>Publicly Available Data Sources:</h2>
-        <ul class="space-y-2">
+        <ul>
           <li><a href="https://www.numlookup.com/" target="_blank" rel="noopener noreferrer">NumLookup</a></li>
           <li><a href="https://www.reversephonecheck.com/" target="_blank" rel="noopener noreferrer">ReversePhoneCheck</a></li>
           <li><a href="https://intelx.io/" target="_blank" rel="noopener noreferrer">IntelligenceX</a></li>
@@ -55,8 +58,8 @@ import '../../styles/global.css';
       </section>
 
       <section>
-        <h2>Carrier/Validation:</h2>
-        <ul class="space-y-2">
+        <h2>Carrier / Validation:</h2>
+        <ul>
           <li><a href="https://freecarrierlookup.com/" target="_blank" rel="noopener noreferrer">FreeCarrierLookup</a></li>
           <li><a href="https://www.calleridtest.com/" target="_blank" rel="noopener noreferrer">CallerIDTest</a> (3 Searches Daily)</li>
         </ul>

@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ToolSection from '../../components/ToolSection.astro';
+---
+
+<BaseLayout title="Investigative Journalism - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <PageHeader
+      title="Investigative Journalism"
+      description="Organizations, resources, and tools for investigative journalists and researchers."
+    />
+
+    <ToolSection
+      title="Organizations & Bureaus"
+      items={[
+        { name: 'Society of Professional Journalists', url: 'https://www.spj.org/' },
+        { name: 'The Bureau of Investigative Journalism (UK)', url: 'https://www.thebureauinvestigates.com/projects/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Resources"
+      items={[
+        { name: 'Global Investigative Journalism Network (GIJN)', url: 'https://gijn.org/resource/' },
+        { name: 'The Centre for Investigative Journalism (TCIJ)', url: 'https://tcij.org/handbooks/' },
+        { name: 'CIFAR - Civil Forum for Asset Recovery: Resources', url: 'https://investigate.cifar.eu/resources' },
+        { name: 'CIFAR - Investigate Manual (PDF)', url: 'https://cifar.eu/wp-content/uploads/2021/06/Investigate-Manual.pdf' },
+        { name: 'CIFAR: Civil Forum for Asset Recovery (EU)', url: 'https://cifar.eu/' },
+        { name: 'Center for International Media Assistance (CIMA)', url: 'https://www.cima.ned.org/' },
+      ]}
+    />
+
+    <ToolSection
+      title="FOIA & Data Access"
+      items={[
+        { name: 'National Freedom of Information Coalition (NFOIC)', url: 'https://www.nfoic.org/foi-center/', desc: 'FOIA' },
+        { name: 'The Office of Government Information Services (OGIS)', url: 'https://www.archives.gov/ogis', desc: 'FOIA Resource' },
+        { name: 'CU-CitizenAccess: FOIA Guide', url: 'https://cu-citizenaccess.org/2016/10/a-primer-on-the-freedom-of-information-act/', desc: 'FOIA' },
+        { name: 'Sunlight Foundation', url: 'https://sunlightfoundation.com/about/', desc: 'Open Data' },
+        { name: 'Sunlight Foundation - GitHub Data Sets', url: 'https://github.com/sunlightpolicy', desc: 'Open Data' },
+        { name: 'Public Accountability', url: 'https://publicaccountability.org/', desc: 'The Accountability Project' },
+        { name: 'DataHub', url: 'https://datahub.io/' },
+        { name: 'RUPEP', url: 'https://rupep.org/en/', desc: 'Public Database of Politically Exposed Persons (Russia, Belarus, Kazakhstan)' },
+        { name: 'OCCRP Aleph', url: 'https://aleph.occrp.org/', desc: 'Global archive of research material for investigative reporting' },
+        { name: 'Global Terrorism Database (GTD)', url: 'https://www.start.umd.edu/', desc: 'University of Maryland' },
+        { name: 'W3.org - DataSetRDFDumps', url: 'https://www.w3.org/wiki/DataSetRDFDumps' },
+      ]}
+    />
+
+    <ToolSection
+      title="International Investigative Organizations"
+      items={[
+        { name: 'International Consortium of Investigative Journalists (ICIJ)', url: 'https://www.icij.org/about/' },
+        { name: 'Reveal News: The Center for Investigative Reporting', url: 'https://revealnews.org/' },
+        { name: 'Global Anti-Corruption Consortium', url: 'https://www.occrp.org/en/gacc/' },
+        { name: 'Transparency International', url: 'https://www.transparency.org/en/', desc: 'The global coalition against corruption' },
+      ]}
+    />
+
+    <ToolSection
+      title="Misinformation, Disinformation & Fact-Checking (Watchdogs)"
+      items={[
+        { name: 'FAIR.org', url: 'https://fair.org/' },
+        { name: 'CISA - Tactics of Disinformation (PDF)', url: 'https://www.cisa.gov/sites/default/files/publications/tactics-of-disinformation_508.pdf' },
+        { name: 'Map of Fact-Checking Resources', url: 'https://reporterslab.org/fact-checking/' },
+        { name: 'Fact Check Markup Tool (Google)', url: 'https://toolbox.google.com/factcheck/markuptool' },
+        { name: 'Search Facts About a Person or Topic (Google)', url: 'https://toolbox.google.com/factcheck/explorer/search/list:recent;hl=en' },
+        { name: 'Ground News', url: 'https://ground.news/', desc: 'Bias Checker' },
+      ]}
+    />
+
+    <ToolSection
+      title="Investigative Reporters & Editors"
+      items={[
+        { name: 'IRE - Investigative Reporters & Editors', url: 'https://www.ire.org/about-ire/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Libraries, Data & Resource Search"
+      items={[
+        { name: 'News Initiative (Google)', url: 'https://newsinitiative.withgoogle.com/resources/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Activism"
+      items={[
+        { name: 'FAIR - Challenging Media Bias Since 1986', url: 'https://fair.org/' },
+        { name: 'ProPublica', url: 'https://www.propublica.org/', desc: 'Exposing government, business, and other institutions via investigative journalism' },
+      ]}
+    />
+
+    <ToolSection
+      title="Ethics"
+      items={[
+        { name: 'Markkula Center for Applied Ethics', url: 'https://www.scu.edu/ethics/focus-areas/journalism-and-media-ethics/', desc: 'Subramaniam Vincent' },
+      ]}
+    />
+
+    <ToolSection
+      title="Free Access"
+      items={[
+        { name: 'OSINT.Industries: Free Access for Investigative Journalists', url: 'https://www.osint.industries/free-access/journalists' },
+        { name: 'The Center for Public Integrity', url: 'https://publicintegrity.org/resources-signup/', desc: 'Investigating Inequality' },
+      ]}
+    />
+
+    <ToolSection
+      title="Laws (Worldwide)"
+      items={[
+        { name: 'SHERLOC - Sharing Electronic Resources and Laws on Crime', url: 'https://sherloc.unodc.org/cld/v3/sherloc/legdb/index.html?lng=en' },
+      ]}
+    />
+
+    <ToolSection
+      title="Miscellaneous"
+      items={[
+        { name: 'Data Journalism', url: 'https://datajournalism.com/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Datasets & Public Records"
+      items={[
+        { name: 'Public Accountability', url: 'https://publicaccountability.org/', desc: 'Search across 1.9 billion+ public records' },
+        { name: 'GIJN Datasets', url: 'https://gijn.org/resource/?gijn_topic=databases', desc: 'Global Investigative Journalism Network' },
+      ]}
+    />
+  </article>
+</BaseLayout>

@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ToolSection from '../../components/ToolSection.astro';
+
+const analytics = [
+  { name: 'MoonSearch', url: 'http://moonsearch.com/analytics/', desc: 'Domains for analytics ID' },
+  { name: 'HackerTarget', url: 'https://hackertarget.com/reverse-analytics-search/', desc: 'Reverse Analytics Search' },
+  { name: 'SpyOnWeb', url: 'https://spyonweb.com/' },
+  { name: 'DNSlytics', url: 'https://dnslytics.com/reverse-analyticsand', desc: 'Reverse Analytics ID' },
+  { name: 'Google Analytics ID Explorer', url: 'https://www.osintcombine.com/google-analytics-id-explorer' },
+  { name: 'OSINT Hub', url: 'https://osinthub.org/' },
+  { name: 'osint.sh/adsense', url: 'https://osint.sh/adsense/' },
+  { name: 'osint.sh/analytics', url: 'https://osint.sh/analytics/' },
+  { name: 'Analyzeid', url: 'https://analyzeid.com/' },
+  { name: 'Similar Websites Search', url: 'https://www.sitelike.org/' },
+  { name: 'DomainIQ Reverse Analytics', url: 'https://www.domainiq.com/reverse_analytics' },
+];
+
+const dns = [
+  { name: 'DNS Dumpster', url: 'https://dnsdumpster.com/' },
+  { name: 'NS Lookup', url: 'https://dnschecker.org/ns-lookup.php' },
+];
+
+const whois = [
+  { name: 'IQ WhoIS', url: 'https://iqwhois.com/advanced-search' },
+  { name: 'Whois', url: 'https://www.apnic.net/static/whowas-ui/' },
+  { name: 'WHOIS History (domain)', url: 'https://osint.sh/whoishistory/' },
+  { name: 'DNS History', url: 'https://completedns.com/dns-history/', desc: 'Completed DNS History' },
+];
+
+const ipAddress = [
+  { name: 'Global User Contributions', url: 'https://guc.toolforge.org/', desc: 'Wikimedia wikis' },
+  { name: 'MetaDefender Cloud', url: 'https://metadefender.com/' },
+  { name: 'FileScan.io', url: 'https://www.filescan.io/scan' },
+  { name: 'VirusTotal', url: 'https://virustotal.com' },
+  { name: 'ONYPHE', url: 'https://www.onyphe.io/', desc: 'Cyber Defense Search Engine' },
+  { name: 'IP Quality Score', url: 'https://www.ipqualityscore.com/vpn-ip-address-check' },
+  { name: 'Firehol IP Lists', url: 'https://iplists.firehol.org/' },
+];
+
+const websiteDomain = [
+  { name: 'Lookyloo', url: 'https://lookyloo.circl.lu/', desc: 'Website Capture/Visual' },
+  { name: 'BuiltWith', url: 'https://builtwith.com/' },
+  { name: 'Wappalyzer', url: 'https://www.wappalyzer.com/', desc: 'Identify Technologies' },
+  { name: 'VirusTotal URL Scanner', url: 'https://www.virustotal.com/gui/home/url' },
+  { name: 'Cuckoo', url: 'https://cuckoo.cert.ee/', desc: 'Analyze files and hashes' },
+  { name: 'BrowserLeaks', url: 'https://browserleaks.com/dns' },
+  { name: 'ICANN Domain Lookup', url: 'https://lookup.icann.org/en' },
+  { name: 'At Same IP', url: 'https://atsameip.intercode.ca/' },
+  { name: 'Zulu zscaler', url: 'https://zulu.zscaler.com/', desc: 'URL Risk Analyzer' },
+];
+
+const urlCheck = [
+  { name: 'WhereGoes', url: 'https://wheregoes.com/', desc: 'Link Redirect Checker' },
+  { name: 'GetLinkInfo', url: 'https://www.getlinkinfo.com/' },
+  { name: 'WebCheck', url: 'https://web-check.as93.net/' },
+];
+
+const otherTools = [
+  { name: 'CyberChef', url: 'https://cyberchef.io/' },
+  { name: 'Domain IQ', url: 'https://www.domainiq.com/tools' },
+  { name: 'ViewDNS.info', url: 'https://viewdns.info/', desc: 'Various Tests' },
+  { name: 'Info BY IP', url: 'https://www.infobyip.com/internettools.php' },
+  { name: 'NM Mapper', url: 'https://www.nmmapper.com/' },
+  { name: 'Whoisology', url: 'https://whoisology.com/', desc: 'Domain, email, keyword reverse whois lookups' },
+  { name: 'Analyzeid', url: 'https://analyzeid.com/', desc: 'Find other websites owned by same person' },
+];
+---
+
+<BaseLayout title="Document Forensics - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <PageHeader
+      title="Document Forensics"
+      description="Analytics, DNS, Whois, IP address, and domain analysis tools for digital forensics investigations."
+    />
+
+    <ToolSection title="Analytics / AdSense" items={analytics} columns={2} />
+    <ToolSection title="DNS" items={dns} />
+    <ToolSection title="Whois" items={whois} />
+    <ToolSection title="IP Address" items={ipAddress} />
+    <ToolSection title="Website / Domain Analysis" items={websiteDomain} columns={2} />
+    <ToolSection title="URL / Site / Domain Check" items={urlCheck} />
+    <ToolSection title="Other Tools" items={otherTools} />
+  </article>
+</BaseLayout>

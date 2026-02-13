@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ToolSection from '../../components/ToolSection.astro';
+
+const steamTools = [
+  { name: 'Steamid.uk', url: 'https://steamid.uk/', desc: 'Look up Steam History' },
+  { name: 'Steam Rep', url: 'https://steamrep.com/', desc: 'Steam reputation checker' },
+  { name: 'Steamid.xyz', url: 'https://steamid.xyz/', desc: 'UserID access' },
+  { name: 'Findsteamid.com', url: 'https://findsteamid.com/' },
+  { name: 'Steam Discovery', url: 'https://steamdiscovery.com/' },
+  { name: 'Steam ID Finder', url: 'https://steamidfinder.com/' },
+  { name: 'Steam Database', url: 'https://steamdb.info/' },
+  { name: 'Steamladder.com', url: 'https://steamladder.com/' },
+  { name: 'Rep.TF', url: 'https://rep.tf/' },
+  { name: 'Steam Rep', url: 'https://steamrep.com/' },
+  { name: 'Report Steam Fraud', url: 'https://f-o-g.trade/', desc: 'Report and track Steam fraud' },
+  { name: 'Giveaways for Steam Games', url: 'https://steamgifts.com/' },
+  { name: 'SteamSpy', url: 'https://steamspy.com/' },
+];
+
+const monitoringTools = [
+  { name: 'F5Bot', url: 'https://f5bot.com/', desc: 'Monitors Reddit, Hacker News, or Lobsters for keywords' },
+  { name: 'Social-Searcher', url: 'https://social-searcher.com/google-social-search', desc: 'Google social search' },
+];
+
+const emptyPlatforms = [
+  'Amazon',
+  'BlueSky',
+  'Discord',
+  'Google',
+  'Snapchat',
+  'TikTok',
+  'Only Fans',
+  'Reddit',
+  'META: Facebook / Instagram',
+  'LinkedIn',
+  'Usernames',
+  'WhatsApp',
+  'Skype',
+  'MISC Tools',
+  'YouTube',
+];
+---
+
+<BaseLayout title="Social Media OSINT - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <PageHeader
+      title="Social Media OSINT"
+      description="Tools for investigating social media platforms including Steam, Reddit, Meta, LinkedIn, and more."
+    />
+
+    <ToolSection title="Steam" items={steamTools} />
+
+    <ToolSection title="Monitoring Mentions" items={monitoringTools} />
+
+    {emptyPlatforms.map((platform) => (
+      <section class="mb-12">
+        <h2 class="mb-4 text-2xl font-bold text-cyan-200 sm:text-3xl">{platform}</h2>
+        <p class="text-zinc-500 text-sm italic">Resources coming soon.</p>
+      </section>
+    ))}
+  </article>
+</BaseLayout>

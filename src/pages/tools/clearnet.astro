@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ToolSection from '../../components/ToolSection.astro';
+---
+
+<BaseLayout title="Clearnet Tools - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <PageHeader
+      title="Clearnet Tools"
+      description="OSINT tools for people search, phone lookup, reverse image search, email verification, and more."
+    />
+
+    <ToolSection
+      title="ONION/DARK WEB (Clearnet) Search Engines"
+      items={[
+        { name: "Darksearch.io", url: "https://darksearch.io/" },
+        { name: "Secret Search Engine Labs", url: "http://www.secretsearchenginelabs.com/" },
+        { name: "Centralops", url: "https://centralops.net/" },
+        { name: "ahmia.fi", url: "http://ahmia.fi/" },
+        { name: "Onion Search Engine", url: "https://onionengine.com/" },
+        { name: "Tor.Link", url: "https://tor.link/" },
+      ]}
+    />
+
+    <ToolSection
+      title="People Search"
+      columns={2}
+      items={[
+        { name: "Radaris", url: "https://radaris.com/" },
+        { name: "Zaba Search", url: "https://zabasearch.com/" },
+        { name: "Social Searcher", url: "https://www.social-searcher.com/" },
+        { name: "Lullar", url: "https://lullar-com-3.appspot.com/en" },
+        { name: "Have I Been Pwned", url: "https://haveibeenpwned.com/" },
+        { name: "ZLookup", url: "https://www.zlookup.com/" },
+        { name: "SpyDialer", url: "https://spydialer.com/" },
+        { name: "Fast People Search", url: "https://www.fastpeoplesearch.com/" },
+        { name: "iTools People Search", url: "http://itools.com/search/people-search" },
+        { name: "Clustrmaps", url: "https://clustrmaps.com/" },
+        { name: "xlek", url: "https://xlek.com/" },
+        { name: "Leak Peek", url: "https://leakpeek.com/" },
+        { name: "uFind Name", url: "https://ufind.name/" },
+        { name: "WebMii", url: "https://webmii.com/" },
+        { name: "US Search", url: "https://www.ussearch.com/" },
+        { name: "USA Trace", url: "https://www.usatrace.com/" },
+        { name: "FreeCarrierLookup", url: "https://freecarrierlookup.com/", desc: "Cell number validator" },
+        { name: "Melissa Data", url: "https://melissa.com/" },
+        { name: "foller", url: "https://foller.me/" },
+        { name: "OSINT Search 1", url: "https://cse.google.com/cse?cx=012020006043586000305%3Aw5dhsgzmkeg#", desc: "Google Custom Search" },
+        { name: "OSINT Search 2", url: "https://cse.google.com/cse?cx=006290531980334157382%3Aqcaf4enph7i#gsc.tab=0", desc: "Google Custom Search" },
+      ]}
+    />
+
+    <ToolSection
+      title="Phone Number Lookup (RU)"
+      items={[
+        { name: "Russia Reverse Lookup", url: "https://www.searchyellowdirectory.com/reverse-phone/7/", desc: "Reverse phone search for +7 numbers" },
+        { name: "Russian Companies Directory", url: "http://www.ved.gov.ru/eng/companies/" },
+        { name: "International Calling Cards", url: "https://www.comfi.com/" },
+        { name: "MySMS Box", url: "https://mysmsbox.ru/phone-search" },
+        { name: "Ru-98.ru", url: "https://ru-98.ru/" },
+        { name: "WhoIsCalling RF", url: "https://xn----dtbofgvdd5ah.xn--p1ai/" },
+        { name: "PhoneNumInfo", url: "https://phonenum.info/" },
+        { name: "Mysmsbox.ru", url: "https://mysmsbox.ru/" },
+        { name: "8call.ru", url: "https://8call.ru/" },
+        { name: "Apertonet.ru", url: "https://apertonet.ru/" },
+        { name: "Znep.ru", url: "https://znep.ru/" },
+        { name: "Apk-shatura.ru", url: "https://apk-shatura.ru/" },
+      ]}
+    />
+
+    <ToolSection
+      title="Phone Number Lookup (USA)"
+      columns={2}
+      items={[
+        { name: "Free Carrier Lookup", url: "https://freecarrierlookup.com/", desc: "Validate VOIP/cellular status" },
+        { name: "Phonebook.cz", url: "https://phonebook.cz/" },
+        { name: "Spy Dialer", url: "https://www.spydialer.com/" },
+        { name: "Epieos Phone Finder", url: "https://tools.epieos.com/phone.php" },
+        { name: "Telephone Directories", url: "https://www.telephonedirectories.us/" },
+        { name: "Melissa Data", url: "https://melissa.com/" },
+        { name: "Secai.AI", url: "https://secai.ai/research" },
+        { name: "RealPhoneValidation", url: "https://realphonevalidation.com/phone-validator-tool/" },
+        { name: "RealPhoneValidation DNC", url: "https://realphonevalidation.com/do-not-call-list-scrubbing/", desc: "Do Not Call registry lookup" },
+        { name: "Apeiron.io", url: "https://apeiron.io/dnc", desc: "DNC lookup" },
+        { name: "smspool.net", url: "https://www.smspool.net/free-carrier-lookup", desc: "Free carrier lookup" },
+        { name: "Intelius", url: "https://www.intelius.com/reverse-phone-lookup/", desc: "Reverse phone lookup" },
+        { name: "KrispCall", url: "https://krispcall.com/tools/phone-carrier-lookup/", desc: "Carrier lookup" },
+        { name: "Veriphone", url: "https://veriphone.io/", desc: "Phone validation and carrier lookup" },
+        { name: "Clear out Phone", url: "https://clearoutphone.io/carrier-lookup/", desc: "Carrier lookup tool" },
+        { name: "IPQS Reverse Phone", url: "https://www.ipqualityscore.com/reverse-phone-number-lookup" },
+        { name: "carrierlookup.com", url: "https://www.carrierlookup.com/" },
+      ]}
+    />
+
+    <ToolSection
+      title="Reverse Image"
+      items={[
+        { name: "TinEye", url: "https://tineye.com/" },
+        { name: "Google Image Search", url: "https://images.google.com/" },
+        { name: "Immerse", url: "https://www.immerse.zone/" },
+        { name: "Reverse Search", url: "https://www.revesesearch.com/" },
+        { name: "Yandex Images", url: "https://yandex.com/images/" },
+        { name: "Bing Visual Search", url: "https://www.bing.com/visualsearch" },
+        { name: "ImageSniper", url: "https://googlelens.imagesniper.eu/" },
+        { name: "Social Catfish", url: "https://socialcatfish.com/reverse-image-search/" },
+        { name: "Search4Faces", url: "https://search4faces.com/" },
+        { name: "Analyse Veracity", url: "https://mever.iti.gr/forensics/", desc: "Analyse the veracity of online media" },
+        { name: "VisualOrigins", url: "https://visualorigins.digitaldigging.org/" },
+      ]}
+    />
+
+    <ToolSection
+      title="E-Mail"
+      items={[
+        { name: "EVA", url: "https://eva.pingutil.com/", desc: "Verify email instantly" },
+        { name: "email checker.NET", url: "https://email-checker.net/" },
+      ]}
+    />
+
+    <ToolSection
+      title="Flight / Aviation"
+      items={[
+        { name: "pic2map.com", url: "https://www.pic2map.com/", desc: "EXIF photo location viewer" },
+        { name: "Flightradar24", url: "https://www.flightradar24.com/", desc: "Live flight tracker" },
+      ]}
+    />
+
+    <ToolSection
+      title="Vehicle Search"
+      items={[
+        { name: "add123.com", url: "https://add123.com/" },
+        { name: "CARFAX.com", url: "https://www.carfaxonline.com/nmvtis" },
+        { name: "Vitu.com", url: "https://www.vitu.com/" },
+        { name: "Experian.com", url: "https://www.experian.com/automotive/automotive-autocheck-nmvtis-new-customer" },
+        { name: "Yassi.com", url: "https://www.yassi.com/" },
+        { name: "VehicleHistory GOV", url: "https://vehiclehistory.bja.ojp.gov/nmvtis_vehiclehistory#1-0", desc: "NMVTIS vehicle history" },
+      ]}
+    />
+
+    <ToolSection
+      title="Business / Government"
+      items={[
+        { name: "Atlas of Surveillance (EFF)", url: "https://atlasofsurveillance.org/", desc: "Database of law enforcement surveillance technologies" },
+        { name: "SHERLOC (UN)", url: "https://sherloc.unodc.org/cld/v3/sherloc/legdb/index.html?lng=en", desc: "UN Office on Drugs and Crime" },
+        { name: "ved.gov.ru", url: "http://www.ved.gov.ru/eng/companies/", desc: "Russian companies directory" },
+        { name: "LittleSis", url: "https://littlesis.org/", desc: "Free database of who-knows-who at the top of the power pyramid" },
+        { name: "list-org.com", url: "https://www.list-org.com/", desc: "Search for organizations, names, addresses" },
+      ]}
+    />
+  </article>
+</BaseLayout>

@@ -1,59 +1,62 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import '../../styles/global.css';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 ---
 
 <BaseLayout title="Expose GitHub E-mail Address - Sara's OSINT Resources">
-  <article class="prose prose-invert prose-violet max-w-none">
-    <a href="/sara.osint/blog" class="mb-4 inline-block text-violet-400 hover:text-violet-300">← Back to Blog</a>
-    
-    <h1 class="gradient-text mb-4 text-5xl font-bold">Expose GitHub E-mail Address*</h1>
-    <p class="mb-8 text-sm text-slate-500">June 2025</p>
+  <article class="prose prose-invert max-w-none">
+    <Breadcrumb items={[
+      { label: 'Blog', href: '/sara.osint/blog' },
+      { label: 'Expose GitHub E-mail Address' },
+    ]} />
+
+    <h1>Expose GitHub E-mail Address*</h1>
+    <p class="mb-8 text-sm text-zinc-500">June 2025</p>
 
     <div class="space-y-6 leading-relaxed">
       <p class="text-xl font-semibold">101</p>
-      
+
       <p>
-        I have my friend <a href="https://github.com/sickcodes/" target="_blank" rel="noopener noreferrer">Sick.Codes</a> GitHub profile. 
+        I have my friend <a href="https://github.com/sickcodes/" target="_blank" rel="noopener noreferrer">Sick.Codes</a> GitHub profile.
         With his permission, I will go through the few steps to find one's e-mail through their profile.
       </p>
 
-      <section class="rounded-lg border border-slate-700 bg-slate-800/50 p-6">
-        <h2 class="mb-4 text-2xl font-bold">Step 1: Locate a Repository</h2>
-        <p>
-          Locate the pinned/favorited repositories and click on one of them. 
-          Example: <a href="https://github.com/sickcodes/osx-serial-generator" target="_blank" rel="noopener noreferrer">osx-serial-generator</a>
+      <section class="not-prose surface-card p-6">
+        <h2 class="mb-4 text-2xl font-bold text-cyan-200">Step 1: Locate a Repository</h2>
+        <p class="text-zinc-200/85">
+          Locate the pinned/favorited repositories and click on one of them.
+          Example: <a href="https://github.com/sickcodes/osx-serial-generator" class="text-cyan-300 hover:text-cyan-200 underline" target="_blank" rel="noopener noreferrer">osx-serial-generator</a>
         </p>
       </section>
 
-      <section class="rounded-lg border border-slate-700 bg-slate-800/50 p-6">
-        <h2 class="mb-4 text-2xl font-bold">Step 2: Click on Commit Numbers</h2>
-        <p>
+      <section class="not-prose surface-card p-6">
+        <h2 class="mb-4 text-2xl font-bold text-cyan-200">Step 2: Click on Commit Numbers</h2>
+        <p class="text-zinc-200/85">
           Click on the commit numbers (letters/numbers) to view commit details.
         </p>
       </section>
 
-      <section class="rounded-lg border border-slate-700 bg-slate-800/50 p-6">
-        <h2 class="mb-4 text-2xl font-bold">Step 3: Add .patch to URL</h2>
-        <p>
-          After a new page has opened, add <code class="rounded bg-slate-900 px-2 py-1">.patch</code> at the end of the URL and hit enter.
+      <section class="not-prose surface-card p-6">
+        <h2 class="mb-4 text-2xl font-bold text-cyan-200">Step 3: Add .patch to URL</h2>
+        <p class="text-zinc-200/85">
+          After a new page has opened, add <code class="rounded bg-white/10 px-2 py-1 text-cyan-200">.patch</code> at the end of the URL and hit enter.
         </p>
-        <p class="mt-4">
-          The output should include the target's e-mail address. <strong>Always assume you have the information until you've verified it is correct.</strong>
+        <p class="mt-4 text-zinc-200/85">
+          The output should include the target's e-mail address. <strong class="text-zinc-100">Always assume you have the information until you've verified it is correct.</strong>
         </p>
       </section>
 
-      <section class="mt-8 rounded-lg border border-yellow-600 bg-yellow-900/20 p-6">
-        <h3 class="mb-3 text-xl font-bold text-yellow-400">⚠️ Things to Keep in Mind:</h3>
-        <p class="text-yellow-200">
+      <section class="not-prose mt-8 surface-card border-yellow-500/20 p-6">
+        <h3 class="mb-3 text-xl font-bold text-yellow-400">Things to Keep in Mind:</h3>
+        <p class="text-yellow-200/80">
           Information may NOT be accurate and could belong to another user's profile/account who has made pull requests on the repository.
         </p>
       </section>
 
       <section class="mt-8">
-        <h2 class="mb-4 text-2xl font-bold">Web Based Tools</h2>
+        <h2>Web Based Tools</h2>
         <p class="mb-3">Tools that may be helpful with GitHub e-mails, IDs, usernames:</p>
-        <ul class="space-y-2">
+        <ul>
           <li><a href="https://api.github.com/users/" target="_blank" rel="noopener noreferrer">https://api.github.com/users/</a>ADDUSERNAMEHERE</li>
           <li><a href="https://github.com/search/advanced" target="_blank" rel="noopener noreferrer">GitHub Advanced Search</a></li>
           <li><a href="https://githut.info/" target="_blank" rel="noopener noreferrer">GitHut</a></li>
@@ -62,8 +65,8 @@ import '../../styles/global.css';
         </ul>
       </section>
 
-      <p class="mt-8 text-center text-lg font-semibold text-violet-400">
-        Take caution, verify your data, and keep it ethical. 💙
+      <p class="mt-8 text-center text-lg font-semibold text-cyan-200">
+        Take caution, verify your data, and keep it ethical.
       </p>
     </div>
   </article>

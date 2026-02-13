@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+
+<BaseLayout title="About - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <PageHeader title="About" />
+
+    <section class="mb-12">
+      <p class="text-lg">
+        Greetings &mdash; My name is Sara.
+      </p>
+      <p>
+        I'm on a quest to launch my OSINT career. This site is a work in progress &mdash;
+        I will be adding material to it slowly but surely. It will be to showcase what I've done
+        and perhaps provide information for others looking to learn.
+      </p>
+      <p>
+        For more information and updates, see
+        <a href="https://sara-osint.blogspot.com/" target="_blank" rel="noopener noreferrer">my blog</a>.
+      </p>
+    </section>
+
+    <section class="mb-12">
+      <h2>CTF Accomplishments</h2>
+      <div class="grid gap-6 sm:grid-cols-2 not-prose">
+        <div class="surface-card p-6 text-center">
+          <p class="text-4xl font-bold text-cyan-200">3rd Place</p>
+          <p class="mt-2 text-zinc-300/80">OSINT CTF</p>
+        </div>
+        <div class="surface-card p-6 text-center">
+          <p class="text-4xl font-bold text-cyan-200">4th Place</p>
+          <p class="mt-2 text-zinc-300/80">Defcon OSINT CTF &mdash; August 2022</p>
+        </div>
+      </div>
+      <p class="mt-6">
+        At <a href="https://defcon.org/" target="_blank" rel="noopener noreferrer">Defcon's</a> OSINT CTF
+        held by <a href="https://www.tracelabs.org/" target="_blank" rel="noopener noreferrer">Trace Labs</a>
+        in August 2022 &mdash; our 2-person team placed 4th!
+      </p>
+      <p class="text-lg font-semibold text-cyan-200">WHOHOO WALMART GREETERS!</p>
+    </section>
+
+    <section class="mb-12">
+      <h2>Coursework & Training</h2>
+      <ul>
+        <li>
+          <strong>Online Harassment: Strategies for Journalists' Defense</strong>, February 2021<br />
+          Knight Center for Journalism in the Americas, Online
+        </li>
+        <li>
+          <strong>Strategy & Tactics for OSINT CTFs</strong>, October 2020<br />
+          Alethe Denis &mdash; Innocent Lives Foundation, Online
+        </li>
+        <li>
+          <strong>Digital Investigations for Journalists</strong>, November 2020<br />
+          Knight Center for Journalism in the Americas, Online
+        </li>
+        <li>
+          <strong>The Power of Digital Audio Storytelling</strong>, November 2022<br />
+          Knight Center for Journalism in the Americas, Online
+        </li>
+        <li>
+          <strong>Masterclass on Online Research with Paul Myers</strong>, May 2020<br />
+          Global Network of Investigative Journalists (GIJN), Webinar Series: Investigating the Pandemic
+        </li>
+        <li>
+          <strong>Alternative & Advanced Search Engine Intelligence (AASEI)</strong>, May 2022<br />
+          Joe Gray &mdash; Antisyphon Training
+        </li>
+        <li>
+          <strong>Investigative Reporting in Platforms</strong>, June 2023<br />
+          How to Dig into Social Accounts, Images, Ads, and Messaging Apps, Online
+        </li>
+      </ul>
+    </section>
+
+    <section class="mb-12">
+      <h2>Volunteering</h2>
+      <ul>
+        <li>
+          <strong>CTI League</strong> &mdash; November 2020 to August 2021<br />
+          Threat Response/Insight, Remote/Online
+        </li>
+        <li>
+          <strong>Night Owl Reconnaissance</strong> &mdash; August 2023 to Present<br />
+          OSINT Investigator
+        </li>
+      </ul>
+    </section>
+
+    <section class="mb-12">
+      <h2>Community</h2>
+      <div class="not-prose flex flex-wrap gap-3">
+        <a href="/sara.osint/resources/osint4good" class="inline-block rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-sm font-medium text-cyan-200 transition-colors hover:bg-cyan-400/20">
+          #OSINT4GOOD
+        </a>
+        <a href="https://www.secjuice.com/social-media-intelligence-socmint/" target="_blank" rel="noopener noreferrer" class="inline-block rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-sm font-medium text-cyan-200 transition-colors hover:bg-cyan-400/20">
+          #SOCMINT
+        </a>
+        <a href="https://www.rusi.org/publication/osinf-lifeblood-decision-making" target="_blank" rel="noopener noreferrer" class="inline-block rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-sm font-medium text-cyan-200 transition-colors hover:bg-cyan-400/20">
+          #OSINF
+        </a>
+        <a href="https://www.osint.industries/post/what-is-dark-web-intelligence-darkint-beginners-guide" target="_blank" rel="noopener noreferrer" class="inline-block rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-sm font-medium text-cyan-200 transition-colors hover:bg-cyan-400/20">
+          #DARKINT
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>
+        Have questions, comments, or suggestions? Reach out via the
+        <a href="https://sara-osint.blogspot.com/" target="_blank" rel="noopener noreferrer">external blog</a>.
+      </p>
+    </section>
+  </article>
+</BaseLayout>

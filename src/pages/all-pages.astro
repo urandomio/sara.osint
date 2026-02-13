@@ -1,127 +1,72 @@
 ---
-import fs from 'node:fs';
-import path from 'node:path';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
 
-const base = import.meta.env.BASE_URL;
-
-const pagesRoot = path.resolve('src/pages');
-
-function walk(dir: string): string[] {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  const out: string[] = [];
-  for (const e of entries) {
-    const full = path.join(dir, e.name);
-    if (e.isDirectory()) out.push(...walk(full));
-    else if (e.isFile() && e.name.endsWith('.astro')) out.push(full);
-  }
-  return out;
-}
-
-function routeFromFile(filePath: string): string {
-  const rel = path.relative(pagesRoot, filePath).replaceAll(path.sep, '/');
-
-  // /index
-  if (rel === 'index.astro') return '/';
-
-  // /foo
-  if (rel.endsWith('/index.astro')) return '/' + rel.slice(0, -'/index.astro'.length);
-
-  // /foo/bar
-  return '/' + rel.slice(0, -'.astro'.length);
-}
-
-function hrefForRoute(route: string): string {
-  if (route === '/') return base;
-  return base + route.slice(1);
-}
-
-function titleCase(s: string): string {
-  return s
-    .split(/[-_ ]+/g)
-    .filter(Boolean)
-    .map((w) => w.slice(0, 1).toUpperCase() + w.slice(1))
-    .join(' ');
-}
-
-function labelForRoute(route: string): string {
-  if (route === '/') return 'Home';
-  const segs = route.split('/').filter(Boolean);
-  const last = segs[segs.length - 1] ?? route;
-  return titleCase(last);
-}
-
-const ignore = new Set<string>([
-  '/',
-]);
-
-const routes = walk(pagesRoot)
-  .map(routeFromFile)
-  .filter((r) => !ignore.has(r))
-  .filter((r) => !r.endsWith('/404'))
-  .filter((r) => r !== '/Welcome');
-
-// Group by top-level segment
-const groups: Map<string, string[]> = new Map();
-for (const r of routes) {
-  const seg = r.split('/').filter(Boolean)[0] ?? 'other';
-  const group = seg;
-  const list = groups.get(group) ?? [];
-  list.push(r);
-  groups.set(group, list);
-}
-
-const order = [
-  'blog',
-  'web-based-tools',
-  'osint-clearnet',
-  'osint-darknet',
-  'investigative-journalism',
-  'document-forensics',
-  'osint-professionals',
-  'osint-challenges',
-  'bloginfo',
-  'mental-health',
+const sections = [
+  {
+    title: 'Tools',
+    pages: [
+      { label: 'Clearnet', href: '/sara.osint/tools/clearnet' },
+      { label: 'Darknet', href: '/sara.osint/tools/darknet' },
+      { label: 'Document Forensics', href: '/sara.osint/tools/document-forensics' },
+      { label: 'Search Engines', href: '/sara.osint/tools/search-engines' },
+      { label: 'Social Media', href: '/sara.osint/tools/social-media' },
+    ],
+  },
+  {
+    title: 'Resources',
+    pages: [
+      { label: 'Investigative Journalism', href: '/sara.osint/resources/journalism' },
+      { label: 'Fact-Checking', href: '/sara.osint/resources/fact-checking' },
+      { label: 'OSINT Professionals', href: '/sara.osint/resources/professionals' },
+      { label: 'Mental Health', href: '/sara.osint/resources/mental-health' },
+      { label: 'OSINT4GOOD', href: '/sara.osint/resources/osint4good' },
+    ],
+  },
+  {
+    title: 'Challenges',
+    pages: [
+      { label: 'Challenges Index', href: '/sara.osint/challenges' },
+      { label: '#garysosintchallenge 5', href: '/sara.osint/challenges/garys-challenge-5' },
+      { label: 'LinkedIn Challenge', href: '/sara.osint/challenges/linkedin-challenge' },
+    ],
+  },
+  {
+    title: 'Blog',
+    pages: [
+      { label: 'Blog Index', href: '/sara.osint/blog' },
+      { label: 'Reverse Searching Phone Numbers', href: '/sara.osint/blog/reverse-searching-phone-numbers' },
+      { label: 'Expose GitHub E-mail Address', href: '/sara.osint/blog/expose-github-email' },
+      { label: 'Introduction to Tor', href: '/sara.osint/blog/intro-to-tor' },
+    ],
+  },
+  {
+    title: 'Other',
+    pages: [
+      { label: 'About', href: '/sara.osint/about' },
+    ],
+  },
 ];
-
-const groupNames = Array.from(groups.keys()).sort((a, b) => {
-  const ia = order.indexOf(a);
-  const ib = order.indexOf(b);
-  if (ia !== -1 && ib !== -1) return ia - ib;
-  if (ia !== -1) return -1;
-  if (ib !== -1) return 1;
-  return a.localeCompare(b);
-});
-
-for (const k of groupNames) {
-  groups.get(k)?.sort((a, b) => a.localeCompare(b));
-}
 ---
 
-<BaseLayout title="Index - Sara's OSINT Resources" description="Browse all imported pages and sections">
+<BaseLayout title="Site Index - Sara's OSINT Resources" description="Browse all pages on the site">
   <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
-    <h1 class="gradient-text mb-8 text-5xl font-bold">Index</h1>
-
-    <p>
-      This is a human-friendly listing of all sections/pages currently in the site.
-      (Useful because the top nav stays intentionally short.)
-    </p>
+    <PageHeader title="Site Index" description="A complete listing of all pages on this site." />
 
     <div class="not-prose mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {groupNames.map((g) => (
-        <section class="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <h2 class="text-base font-semibold tracking-wide text-zinc-100">{titleCase(g)}</h2>
+      {sections.map((section) => (
+        <div class="surface-card p-5">
+          <h2 class="text-base font-semibold tracking-wide text-zinc-100">{section.title}</h2>
           <ul class="mt-3 space-y-2 text-sm">
-            {(groups.get(g) ?? []).map((r) => (
+            {section.pages.map((page) => (
               <li>
-                <a class="focus-ring text-cyan-300 hover:text-cyan-200" href={hrefForRoute(r)}>
-                  {labelForRoute(r)}
+                <a class="text-cyan-300 hover:text-cyan-200 transition-colors" href={page.href}>
+                  {page.label}
                 </a>
-                <span class="ml-2 text-xs text-zinc-400">{r}</span>
               </li>
             ))}
           </ul>
-        </section>
+        </div>
       ))}
     </div>
   </article>

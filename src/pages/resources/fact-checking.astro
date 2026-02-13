@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ToolSection from '../../components/ToolSection.astro';
+---
+
+<BaseLayout title="Fact-Checking - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <PageHeader
+      title="Fact-Checking & Misinformation"
+      description="Tools for verifying claims, checking bias, and investigating disinformation."
+    />
+
+    <ToolSection
+      title="Is this True?"
+      items={[
+        { name: 'Google Fact Checking', url: 'https://toolbox.google.com/factcheck/explorer/search/list:recent;hl=en' },
+        { name: 'Politifact', url: 'https://www.politifact.com/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Fact-Checks"
+      items={[
+        { name: 'Snopes', url: 'https://www.snopes.com/fact-check/' },
+        { name: 'Hoaxy2', url: 'https://hoaxy.osome.iu.edu/' },
+        { name: 'Google Fact Check Tool', url: 'https://toolbox.google.com/factcheck/explorer/search/list:recent;hl=en' },
+      ]}
+    />
+
+    <ToolSection
+      title="Presidential Race & Politics"
+      items={[
+        { name: 'Open Secrets', url: 'https://www.opensecrets.org/2024-presidential-race' },
+        { name: 'Washington Post Political Fact Checks', url: 'https://www.washingtonpost.com/politics/fact-checker/' },
+        { name: 'Check Your Fact', url: 'https://checkyourfact.com/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Bias (News)"
+      items={[
+        { name: 'Media Bias Fact Check', url: 'https://mediabiasfactcheck.com/' },
+        { name: 'Ground News', url: 'https://ground.news/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Fact-Checking the News"
+      items={[
+        { name: 'Truth Be Told', url: 'https://truthbetold.news/category/fact-checks/' },
+        { name: 'Ground News', url: 'https://ground.news/' },
+        { name: 'Reuters Fact Check', url: 'https://www.reuters.com/fact-check/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Ukrainian Data Journalism"
+      items={[
+        { name: 'Texty ORG', url: 'https://texty.org.ua/tag/dezinformatsija/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Scam Directory"
+      items={[
+        { name: 'The Scam Directory', url: 'https://scam.directory/' },
+        { name: 'ScamSearch', url: 'https://scamsearch.io/', desc: 'Global Scam Database' },
+        { name: 'ScammerDigger', url: 'https://scamdigger.com/', desc: 'Profiles of scammers, fakes, catfish' },
+        { name: 'Fake-Scam', url: 'https://www.fake-scam.info/', desc: 'Fraud Forum' },
+      ]}
+    />
+
+    <ToolSection
+      title="Image Verification"
+      items={[
+        { name: 'Analyse the Veracity of Online Media', url: 'https://mever.iti.gr/forensics/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Trends"
+      items={[
+        { name: 'Yandex Trends', url: 'https://wordstat.yandex.ru/' },
+        { name: 'Google Trends (USA)', url: 'https://trends.google.com/trends/explore?hl=en-US' },
+        { name: 'Google Trends to Explore', url: 'https://trends.google.gg/trends/explore?geo=GG&hl=en-GB' },
+      ]}
+    />
+  </article>
+</BaseLayout>

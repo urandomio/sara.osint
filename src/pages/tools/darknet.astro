@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ToolSection from '../../components/ToolSection.astro';
+
+const startMePages = [
+  { name: 'bkindle - Human Trafficking Resources', url: 'https://start.me/p/p1DkqM/human-trafficking-resources' },
+  { name: 'OSINT Tactical', url: 'https://start.me/p/Pwy0X4/osint-inception' },
+  { name: 'NCSO - Darkweb Breach Data', url: 'https://start.me/p/X2wwpk/14-dark-web-breach-data' },
+  { name: 'OSINT Russie (French)', url: 'https://start.me/p/0PeKwy/osint-russie-iec-ies' },
+];
+
+const databases = [
+  { name: 'Russian Companies Directory', url: 'http://www.ved.gov.ru/eng/companies/' },
+  { name: 'RUPEP', url: 'https://rupep.org/en/', desc: 'Public Database of Politically Exposed Persons (Russia, Belarus, Kazakhstan)' },
+  { name: 'OCCRP Aleph', url: 'https://aleph.occrp.org/', desc: 'Global archive of research material for investigative reporting' },
+  { name: 'Поиск компании', url: 'https://xn--c1aubj.xn--80asehdb/companies/' },
+  { name: 'Project Honeypot', url: 'https://www.projecthoneypot.org/' },
+  { name: 'Biznar - Federated Search', url: 'https://biznar.com/' },
+  { name: 'LittleSis', url: 'https://littlesis.org/', desc: 'Free database of who-knows-who at the heights of business and government' },
+  { name: 'List-Org', url: 'https://www.list-org.com/', desc: 'Search for org, name, address — verify' },
+];
+
+const news = [
+  { name: 'FLASHLIGHT 2.0', url: 'http://ovgl57qc3a5abwqgdhdtssvmydr6f6mjz6ey23thwy63pmbxqmi45iid.onion/', desc: 'An info beam in the darkweb' },
+  { name: 'Forbes.ru - What is the Darknet', url: 'https://www.forbes.ru/tekhnologii/461629-cto-takoe-darknet-i-naskol-ko-on-bezopasen' },
+  { name: 'Medium - Onion Directory', url: 'https://medium.com/search?q=ONION+DIRECTORY' },
+  { name: 'The Tor Times', url: 'http://tortimeswqlzti2aqbjoieisne4ubyuoeiiugel2layyudcfrwln76qd.onion/', desc: 'Breaking darknet market news and links' },
+];
+
+const languageTools = [
+  { name: 'Behind the Name', url: 'https://www.behindthename.com/', desc: 'Meaning and history of first names' },
+  { name: 'Russian Transliteration', url: 'https://translit.net/' },
+  { name: 'Find Alternate Spellings', url: 'https://datayze.com/alternate-spelling-finder' },
+  { name: 'Nationalize.io', url: 'https://nationalize.io/', desc: 'Ethnicity predictor by name' },
+];
+---
+
+<BaseLayout title="Darknet Tools - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <PageHeader
+      title="Darknet Tools"
+      description="Resources for bookmarking and organizing onion sites, dark web search engines, directories, forums, and research tools."
+    />
+
+    <p>
+      For bookmarking and organizing onion sites via the dark web and clearnet.
+      Archives, education, sharing, discussions, social media, search engines, link checkers,
+      security/privacy, transparency/journalism/whistleblower aids, and more.
+    </p>
+
+    <ToolSection title="Start.me Bookmark Pages" items={startMePages} />
+    <ToolSection title="Databases & Organizations" items={databases} />
+    <ToolSection title="News & Publications" items={news} />
+    <ToolSection title="Language, Names & Transliterations" items={languageTools} />
+  </article>
+</BaseLayout>

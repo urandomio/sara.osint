@@ -1,0 +1,21 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+}
+
+const { slug, title, date, excerpt } = Astro.props;
+---
+
+<a
+  href={`/sara.osint/blog/${slug}`}
+  class="group block surface-card p-6 transition-all hover:border-cyan-400/30 hover:bg-white/10"
+>
+  <h2 class="mb-2 text-xl font-bold text-zinc-100 group-hover:text-cyan-200">
+    {title}
+  </h2>
+  <p class="mb-3 text-sm text-zinc-500">{date}</p>
+  <p class="text-zinc-300/80">{excerpt}</p>
+</a>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ToolSection from '../../components/ToolSection.astro';
+---
+
+<BaseLayout title="OSINT Professionals - Sara's OSINT Resources">
+  <article class="surface p-6 sm:p-10 prose prose-invert max-w-none">
+    <PageHeader
+      title="OSINT Professionals"
+      description="Notable OSINT researchers, their tools, and resources."
+    />
+
+    <ToolSection
+      title="OhSHINT"
+      items={[
+        { name: 'OhSHint Blog', url: 'https://ohshint.gitbook.io/oh-shint-its-a-blog' },
+        { name: 'GitHub', url: 'https://github.com/ohshint' },
+        { name: 'X (Twitter)', url: 'https://x.com/ohshint_?lang=en' },
+        { name: 'OhSHint Archive', url: 'https://archive.org/details/1-complete-list-of-osint-web-resources-light-ohshint' },
+        { name: 'TryHackMe OhSHint', url: 'https://tryhackme.com/room/ohsint' },
+      ]}
+    />
+
+    <ToolSection
+      title="Cyber Detective"
+      items={[
+        { name: 'OSINT Tools Map (worldwide)', url: 'https://cybdetective.com/osintmap/' },
+        { name: 'CybDetectives OSINT Tools (GitHub)', url: 'https://github.com/cipher387/osint_stuff_tool_collection' },
+        { name: 'Threadreader', url: 'https://threadreaderapp.com/user/cyb_detective' },
+        { name: 'CybDetective OSINTMAP', url: 'https://cybdetective.com/osintmap/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Justin Seitz"
+      items={[
+        { name: 'Substack', url: 'https://substack.com/@justinseitz' },
+        { name: 'NoStarch - Black Hat Python', url: 'https://nostarch.com/black-hat-python2E', desc: 'Python Programming for Hackers and Pentesters' },
+        { name: 'X (Twitter)', url: 'https://x.com/jms_dot_py' },
+        { name: 'Bullsh*t Hunting', url: 'https://www.bullshithunting.com/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Paul Myers"
+      items={[
+        { name: 'X (Twitter)', url: 'https://x.com/paulmyersbbc?lang=en' },
+        { name: 'Research Clinic', url: 'https://researchclinic.net/about.html' },
+        { name: 'GIJN - Paul Myers', url: 'https://gijn.org/stories/paul-myers-news-media-should-not-be-intimidated/' },
+        { name: 'YouTube - GIJC17 Voices: Paul Myers, BBC', url: 'https://www.youtube.com/watch?v=kiexay9n_GM', desc: 'On investigative methods' },
+        { name: 'Finding People Online: A Tipsheet', url: 'https://gijn.org/stories/finding-people-online-a-tipsheet-from-paul-myers/' },
+      ]}
+    />
+
+    <ToolSection
+      title="Henk Van Ess"
+      items={[
+        { name: 'Substack', url: 'https://substack.com/@henkvaness' },
+        { name: 'Visual Origins Detector', url: 'https://visualorigins.digitaldigging.org/' },
+        { name: 'Digital Digging', url: 'https://www.digitaldigging.org/' },
+        { name: 'Search Whisperer AI', url: 'https://www.searchwhisperer.ai/' },
+      ]}
+    />
+  </article>
+</BaseLayout>

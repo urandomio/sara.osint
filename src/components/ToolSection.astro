@@ -1,0 +1,32 @@
+---
+interface Tool {
+  name: string;
+  url: string;
+  desc?: string;
+}
+
+interface Props {
+  title: string;
+  items: Tool[];
+  columns?: 1 | 2;
+}
+
+const { title, items, columns = 1 } = Astro.props;
+---
+
+<section class="mb-12">
+  <h2 class="mb-4 text-2xl font-bold text-cyan-200 sm:text-3xl">{title}</h2>
+  <ul class:list={[
+    'space-y-2',
+    columns === 2 && 'grid grid-cols-1 gap-2 md:grid-cols-2 space-y-0',
+  ]}>
+    {items.map((tool) => (
+      <li>
+        <a href={tool.url} target="_blank" rel="noopener noreferrer">
+          {tool.name}
+        </a>
+        {tool.desc && <span class="ml-1 text-sm text-zinc-400">— {tool.desc}</span>}
+      </li>
+    ))}
+  </ul>
+</section>
