@@ -5,8 +5,9 @@
 }
 
 @layer base {
+  html,
   body {
-    @apply bg-[#050814] text-zinc-100 antialiased;
+    @apply bg-[#050814] text-zinc-100 antialiased overflow-x-hidden;
   }
 
   * {
@@ -35,6 +36,8 @@
 
   .prose a {
     @apply text-cyan-300 underline decoration-cyan-300/40 underline-offset-4 transition-colors hover:text-cyan-200;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .prose h1 {
@@ -47,6 +50,15 @@
 
   .prose h3 {
     @apply mb-3 mt-8 text-2xl font-semibold text-zinc-100;
+  }
+
+  /* Prevent long headings (or long unbroken strings) from causing horizontal scroll on mobile */
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    hyphens: auto;
   }
 
   .prose p {
